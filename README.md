@@ -46,6 +46,10 @@ Whether you're managing a complex network infrastructure or just getting started
     ```bash
     python3 app.py
     ```
+    or use "nohup" syntax "&" to run in background mode.
+    ```bash
+    nohup python3 app.py &
+    ```    
 
 ---
 
@@ -63,7 +67,7 @@ Whether you're managing a complex network infrastructure or just getting started
 
 Navigate to `http://127.0.0.1:5000/` in your web browser.
 
-- Click in Load environment to generate a .json file with your environment's data
+- Click on **Load environment** to generate a .json file with your environment's data
     - This .json will be stored under .environments/ directory. 
 - Select a subscription from the dropdown menu and click **Submit** to view VNets and their details.
 - Use the **"Validate Hub Peerings"** menu option to validate peerings for a specific VNet.
