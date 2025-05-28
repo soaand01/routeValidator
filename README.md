@@ -6,10 +6,7 @@ Whether you're managing a complex network infrastructure or just getting started
 
 **Author:** andlopes@microsoft.com
 
-
-<div style="background-color: #fff3cd; color: #000000; padding: 10px; border-left: 6px solid #ffeeba;">
 <strong>⚠️ Note:</strong> Improvements need to be done in the tool, but I see a lot of potential for new features not only for route tables but many other services in Azure as well.
-</div>
 
 
 
