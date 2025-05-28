@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Routes Validator{% endblock %}
+
+{% block header %}Routes Validator{% endblock %}
+
+{% block content %}
+    <form method="post" class="mb-4">
+        <div class="mb-3">
+            <label for="subscription" class="form-label">Select Subscription:</label>
+            <select name="subscription" id="subscription" class="form-select">
+                {% for sub_id, sub_name in subscriptions %}
+                    <option value="{{ sub_id }}" {% if sub_id == selected_subscription_id %}selected{% endif %}>{{ sub_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+    {% if results %}
+    <table class="table table-dark table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>VNet Name</th>
+                <th>Subnet Name</th>
+                <th>Route Table Name</th>
+                <th>BGP Propagation</th>
+                <th>Routes</th>
+                <th>NSG Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+            <tr>
+                <td>{{ result[0]|safe }}</td>
+                <td>{{ result[1]|safe }}</td>
+                <td>{{ result[2] }}</td>
+                <td>{{ result[3] }}</td>
+                <td><pre>{{ result[4] }}</pre></td>
+                <td>{{ result[5] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+{% endblock %}

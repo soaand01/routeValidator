@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Insights{% endblock %}
+
+{% block header %}Insights{% endblock %}
+
+{% block content %}
+    <table class="table table-dark table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Subscription Name</th>
+                <th>Total VNets</th>
+                <th>Total Subnets</th>
+                <th>Total NSGs</th>
+                <th>Total Route Tables</th>
+                <th>Subnets with BGP Enabled</th>
+                <th>Total Peerings</th>
+                <th>Total VNet Gateways</th>
+                <th>Total ExpressRoute Circuits</th>
+                <th>Regions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for insight in insights %}
+            <tr>
+                <td>{{ insight["Subscription Name"] }}</td>
+                <td>{{ insight["Total VNets"] }}</td>
+                <td>{{ insight["Total Subnets"] }}</td>
+                <td>{{ insight["Total NSGs"] }}</td>
+                <td>{{ insight["Total Route Tables"] }}</td>
+                <td>{{ insight["Subnets with BGP Enabled"] }}</td>
+                <td>{{ insight["Total Peerings"] }}</td>
+                <td><a href="https://portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.Network%2FvirtualNetworkGateways" target="_blank">{{ insight["Total VNet Gateways"] }}</a></td>
+                <td>{{ insight["Total ExpressRoute Circuits"] }}</td>
+                <td>{{ insight["Regions"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="/" class="btn btn-secondary">Back</a>
+{% endblock %}

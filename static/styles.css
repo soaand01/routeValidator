@@ -1,0 +1,51 @@
+table {
+    width: 100%;
+    border-collapse: collapse; /* Ensure borders collapse into a single line */
+    font-size: 14px; /* Set a consistent font size */
+    background-color: black; /* Set table background to black */
+    color: white; /* Set text color to white */
+}
+
+th, td {
+    border: 1px solid white; /* White border for table cells */
+    padding: 8px; /* Add some padding for readability */
+    margin: 0; /* Remove margin */
+}
+
+pre {
+    white-space: pre-wrap; /* Ensure preformatted text wraps */
+    font-size: 12px; /* Ensure preformatted text has the same font size */
+    color: white; /* Set preformatted text color to white */
+}
+
+/* Ensure text size adjusts properly across browsers */
+html, body {
+    -webkit-text-size-adjust: 100%; /* For older WebKit browsers */
+    text-size-adjust: 100%; /* Standard property for modern browsers */
+}
+
+/* Ensure text alignment works across browsers */
+body, th {
+    text-align: -webkit-match-parent; /* For older WebKit browsers */
+    text-align: match-parent; /* Standard property for modern browsers */
+}
+
+/* Ensure print color adjustment works across browsers */
+@media print {
+    body {
+        -webkit-print-color-adjust: exact; /* For older WebKit browsers */
+        color-adjust: exact; /* Standard property for modern browsers */
+    }
+}
+
+/* Ensure text alignment inheritance works properly */
+body {
+    text-align: inherit; /* Standard property */
+}
+
+code {
+    background-color: black;
+    color: white;
+    padding: 2px 4px;
+    border-radius: 4px;
+}

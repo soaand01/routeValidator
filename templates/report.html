@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+
+{% block title %}Network Report{% endblock %}
+
+{% block header %}Network Report{% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <h2>Network Configuration Report</h2>
+        <p>Generated on: {{ now }}</p>
+        <a href="/download-report" class="btn btn-dark mb-4">Download PDF</a>
+        
+        <h3>Subscriptions</h3>
+        <ul>
+            {% for sub in data.subscriptions %}
+                <li>{{ sub[1] }} (ID: {{ sub[0] }})</li>
+            {% endfor %}
+        </ul>
+        
+        <h3>Virtual Networks</h3>
+        <table class="table table-dark table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Subscription</th>
+                    <th>VNet Name</th>
+                    <th>Address Space</th>
+                    <th>Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for vnet in data.vnets %}
+                <tr>
+                    <td>{{ vnet.subscription_id }}</td>
+                    <td>{{ vnet.name }}</td>
+                    <td>{{ vnet.address_space.address_prefixes | join(', ') }}</td>
+                    <td>{{ vnet.location }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <h3>Subnets</h3>
+        <table class="table table-dark table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>VNet Name</th>
+                    <th>Subnet Name</th>
+                    <th>Address Prefix</th>
+                    <th>NSG</th>
+                    <th>Route Table</th>
+                    <th>BGP Propagation</th>
+                    <th>Routes</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for subnet in data.subnets %}
+                <tr>
+                    <td>{{ subnet.virtual_network_name }}</td>
+                    <td>{{ subnet.name }}</td>
+                    <td>{{ subnet.address_prefix }}</td>
+                    <td>
+                        {% if subnet.network_security_group %}
+                            {% set nsg = data.nsgs | selectattr('id', 'equalto', subnet.network_security_group.id) | first %}
+                            {{ nsg.name if nsg else 'None' }}
+                        {% else %}
+                            None
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if subnet.route_table %}
+                            {% set route_table = data.route_tables | selectattr('id', 'equalto', subnet.route_table.id) | first %}
+                            {{ route_table.name if route_table else 'None' }}
+                        {% else %}
+                            None
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if subnet.route_table %}
+                            {% set route_table = data.route_tables | selectattr('id', 'equalto', subnet.route_table.id) | first %}
+                            {{ 'Enabled' if not route_table.disable_bgp_route_propagation else 'Disabled' }}
+                        {% else %}
+                            N/A
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if subnet.route_table %}
+                            {% set route_table = data.route_tables | selectattr('id', 'equalto', subnet.route_table.id) | first %}
+                            {% if route_table.routes %}
+                                {% for route in route_table.routes %}
+                                    <div>
+                                        <strong>{{ route.name }}:</strong> {{ route.address_prefix }}, {{ route.next_hop_type }}{% if route.next_hop_ip_address %}, {{ route.next_hop_ip_address }}{% endif %}
+                                    </div>
+                                {% endfor %}
+                            {% else %}
+                                No routes
+                            {% endif %}
+                        {% else %}
+                            No routes
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+        <h3>Peerings</h3>
+        <table class="table table-dark table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>VNet Name</th>
+                    <th>Peering Name</th>
+                    <th>Remote VNet</th>
+                    <th>Allow VNet Access</th>
+                    <th>Allow Forwarded Traffic</th>
+                    <th>Use Remote Gateways</th>
+                    <th>Allow Gateway Transit</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for peering in data.peerings %}
+                <tr>
+                    <td>{{ peering.virtual_network_name }}</td>
+                    <td>{{ peering.name }}</td>
+                    <td>{{ peering.remote_virtual_network.id }}</td>
+                    <td>{{ peering.allow_virtual_network_access }}</td>
+                    <td>{{ peering.allow_forwarded_traffic }}</td>
+                    <td>{{ peering.use_remote_gateways }}</td>
+                    <td>{{ peering.allow_gateway_transit }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h3>VNet Distribution by Subscription</h3>
+        <canvas id="vnetChart"></canvas>
+        <script>
+            var ctx = document.getElementById('vnetChart').getContext('2d');
+            var vnetChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: [{% for sub in data.subscriptions %}'{{ sub[1] }}',{% endfor %}],
+                    datasets: [{
+                        label: '# of VNets',
+                        data: [{% for sub in data.subscriptions %}{{ data.vnets | selectattr('subscription_id', 'equalto', sub[0]) | list | length }},{% endfor %}],
+                        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                        borderColor: 'rgba(54, 162, 235, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        </script>
+    </div>
+    <style>
+        @media print {
+            body {
+                font-size: 10px;
+            }
+            .table {
+                font-size: 10px;
+            }
+            .table-sm {
+                font-size: 9px;
+            }
+        }
+    </style>
+
+{% endblock %}

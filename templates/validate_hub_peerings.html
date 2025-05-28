@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Peerings Validator{% endblock %}
+
+{% block header %}Peerings Validator{% endblock %}
+
+{% block content %}
+    <form method="post" class="mb-4">
+        <div class="mb-3">
+            <label for="subscription_id" class="form-label">Subscription ID:</label>
+            <input type="text" name="subscription_id" id="subscription_id" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="vnet_name" class="form-label">VNet Name:</label>
+            <input type="text" name="vnet_name" id="vnet_name" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <input type="checkbox" name="is_hub" id="is_hub" value="hub">
+            <label for="is_hub" class="form-label">Is Hub</label>
+        </div>
+        <div class="mb-3">
+            <input type="checkbox" name="is_spoke" id="is_spoke" value="spoke">
+            <label for="is_spoke" class="form-label">Is Spoke</label>
+        </div>
+        <button type="submit" class="btn btn-dark">Submit</button>
+        <a href="/" class="btn btn-secondary">Back</a>
+    </form>
+
+    {% if results %}
+    <table class="table table-dark table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Peering Name</th>
+                <th>Allow VNet Access <br><small>(Must be true in both hub and spoke)</small></th>
+                <th>Forwarded Traffic Allowed <br><small>(Must be true in spoke and false in hub)</small></th>
+                <th>Gateway Transit Allowed <br><small>(Must be false in spoke and true in hub)</small></th>
+                <th>Uses Remote Gateway <br><small>(Must be true in spoke and false in hub)</small></th>
+                <th>Remote Virtual Network</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+            <tr>
+                <td>{{ result['peering_name'] }}</td>
+                {% if is_hub or is_spoke %}
+                    <td style="color: {{ 'green' if result['allow_vnet_access'] else 'red' }}">{{ result['allow_vnet_access'] }}</td>
+                    <td style="color: {{ 'green' if (result['allow_forwarded_traffic'] and is_spoke) or (not result['allow_forwarded_traffic'] and is_hub) else 'red' }}">{{ result['allow_forwarded_traffic'] }}</td>
+                    <td style="color: {{ 'green' if (result['allow_gateway_transit'] and is_hub) or (not result['allow_gateway_transit'] and is_spoke) else 'red' }}">{{ result['allow_gateway_transit'] }}</td>
+                    <td style="color: {{ 'green' if (result['use_remote_gateways'] and is_spoke) or (not result['use_remote_gateways'] and is_hub) else 'red' }}">{{ result['use_remote_gateways'] }}</td>
+                {% else %}
+                    <td>{{ result['allow_vnet_access'] }}</td>
+                    <td>{{ result['allow_forwarded_traffic'] }}</td>
+                    <td>{{ result['allow_gateway_transit'] }}</td>
+                    <td>{{ result['use_remote_gateways'] }}</td>
+                {% endif %}
+                <td>{{ result['remote_virtual_network'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% endif %}
+{% endblock %}

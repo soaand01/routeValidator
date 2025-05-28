@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <div class="text-center">
+        <form action="/load-environment" method="post">
+            <button type="submit" class="btn btn-dark mb-4">Load Environment</button>
+        </form>
+        {% if message %}
+            <div class="alert alert-success">{{ message }}</div>
+        {% endif %}
+    </div>
+    <div class="text-start">
+        <h2>Welcome 🌐</h2>
+        <p>This application is designed to help you validate your Virtual Network (VNet) routes and peerings in Azure.<br> Whether you're managing a complex network infrastructure or just getting started, our tool provides the insights you need to ensure your network is configured correctly.
+        <br> <b>Author:</b> andlopes@microsoft.com</p>
+        
+        <h3>Features 🚀</h3>
+        <ul class="list-unstyled">
+            <li>🔍 Validate VNet peerings to ensure proper connectivity.</li>
+            <li>📊 Gain insights into your network configuration, including VNets, subnets, NSGs, and route tables.</li>
+            <li>🛠️ Check BGP propagation and route configurations.</li>
+        </ul>
+        
+        <h3>Installation 🛠️</h3>
+        <ol>
+            <li>Create a virtual environment:
+                <pre><code>python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`</code></pre>
+            </li>
+            <li>Install the required dependencies:
+                <pre><code>pip install Flask azure-identity azure-mgmt-network azure-mgmt-resource tabulate</code></pre>
+            </li>
+            <li>Set up Azure authentication:
+                <ul>
+                    <li>Ensure you have the Azure CLI installed and logged in.</li>
+                    <li>Run <code>az login</code> to authenticate.</li>
+                </ul>
+            </li>
+            <li>Run the application:
+                <pre><code>python3 app.py</code></pre>
+            </li>
+        </ol>
+        
+        <h3>Dependencies 📦</h3>
+        <ul>
+            <li>Flask: A micro web framework for Python.</li>
+            <li>azure-identity: Azure SDK for Python to authenticate with Azure.</li>
+            <li>azure-mgmt-network: Azure SDK for Python to manage network resources.</li>
+            <li>azure-mgmt-resource: Azure SDK for Python to manage resource groups and resources.</li>
+            <li>tabulate: A library to format tabular data.</li>
+        </ul>
+        
+        <h3>Usage 📋</h3>
+        <p>Navigate to <code>http://127.0.0.1:5000/</code> in your web browser. Select a subscription from the dropdown menu and click "Submit" to view VNets and their details. Use the "Validate Hub Peerings" menu option to validate peerings for a specific VNet.</p>
+        
+        <p>We hope you find this tool helpful in managing your Azure network infrastructure. If you have any questions or need support, feel free to reach out!</p>
+        
+    </div>
+{% endblock %}
