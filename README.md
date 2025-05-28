@@ -20,7 +20,9 @@ Whether you're managing a complex network infrastructure or just getting started
 
 ---
 
-## 🛠️ Installation
+## 🛠️ Installation on Ubuntu
+####  Install/enable WSL in case you don't have yet: [Installing/Enabling WSL](https://learn.microsoft.com/en-us/windows/wsl/install)
+
 
 1. **Create a virtual environment: ( Optional step )**
 
