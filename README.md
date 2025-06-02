@@ -37,7 +37,7 @@ Whether you're managing a complex network infrastructure or just getting started
 2. **Install the required dependencies:**
 
     ```bash
-    pip install Flask azure-identity azure-mgmt-network azure-mgmt-resource tabulate
+    pip3 install Flask azure-identity azure-mgmt-network azure-mgmt-resource tabulate
     ```
 
 3. **Set up Azure authentication:**
