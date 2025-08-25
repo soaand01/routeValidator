@@ -13,7 +13,7 @@ Features:
 Installation:
 1. Create a virtual environment:
     python -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    source venv/bin/activate  
 
 2. Install the required dependencies:
     pip install Flask azure-identity azure-mgmt-network azure-mgmt-resource tabulate
