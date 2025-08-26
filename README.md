@@ -9,7 +9,7 @@ Whether you're managing a complex network infrastructure or just getting started
 <strong>⚠️ Note:</strong> Improvements need to be done in the tool, but I see a lot of potential for new features not only for route tables but many other services in Azure as well.
 
 
-
+<!-- Note: Do not store or commit OpenAI API keys in this repository. Auto-Validate requires you to provide a personal OpenAI API key on the Auto-Validate page; the key is used for that run only and is not stored. -->
 ---
 
 ## 🚀 Features
@@ -36,8 +36,21 @@ Whether you're managing a complex network infrastructure or just getting started
 
 2. **Install the required dependencies:**
 
+    It's recommended to do this inside a virtual environment (see step 1).
+
     ```bash
-    pip3 install Flask azure-identity azure-mgmt-network azure-mgmt-resource tabulate
+    # Python packages
+    pip3 install Flask azure-identity azure-mgmt-network azure-mgmt-resource tabulate weasyprint markdown
+
+    # Optional: enable OpenAI-powered explanations (requires an API key)
+    pip3 install openai
+    ```
+
+    Note: `weasyprint` depends on system libraries. On Ubuntu install the following first:
+
+    ```bash
+    sudo apt-get update
+    sudo apt-get install -y libcairo2 libpango-1.0-0 libgdk-pixbuf2.0-0 shared-mime-info python3-dev build-essential
     ```
 
 3. **Set up Azure authentication:**
@@ -65,6 +78,9 @@ Whether you're managing a complex network infrastructure or just getting started
 - **azure-mgmt-network** – Azure SDK for Python to manage network resources.
 - **azure-mgmt-resource** – Azure SDK for Python to manage resource groups and resources.
 - **tabulate** – A library to format tabular data.
+ - **weasyprint** – Convert rendered HTML to PDF (used for the download report).
+ - **markdown** – Server-side markdown renderer used to convert LLM output to HTML.
+ - **openai** (optional) – If you want the app to call the OpenAI API to generate narrative explanations.
 
 ---
 

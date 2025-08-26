@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+.venv/
+ENV/
+
+# IDE/editor
+.vscode/
+*.swp
+
+# Local data and outputs
+autoValidations/
+environments/
+
+# Distribution
+dist/
+build/

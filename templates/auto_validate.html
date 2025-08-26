@@ -3,6 +3,8 @@
 {% block title %}Auto-Validate Routing{% endblock %}
 
 {% block content %}
+    <!-- GitHub Markdown CSS for beautiful markdown rendering -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown-light.min.css">
     <div class="card mb-4 bg-white border shadow-sm">
         <div class="card-body">
             <h5 class="card-title text-primary">What is the Auto-Validate page?</h5>
@@ -10,49 +12,92 @@
         </div>
     </div>
     <div class="container">
-        <h1>Auto-Validate Routing</h1>
-        The idea is to automate the validation of all the data collected based on Vnet and Firewall<br>
-        However a lot of improves still need to be done, it works but for now I do not recommend to use since I stoped to work on this feature. 
-        <p> 
-        <p>
-        <form action="/auto-validate" method="post">
-            <div class="mb-3">
-                <label for="subscription_id" class="form-label">Hub Subscription ID:</label>
-                <input type="text" name="subscription_id" id="subscription_id" class="form-control" required>
+        <h1 class="mb-4 text-primary">Auto-Validate Routing</h1>
+
+        <form action="/auto-validate" method="post" class="mb-4 p-3 bg-light border rounded shadow-sm">
+            <div class="form-group mb-3">
+                <label for="subscription" class="form-label">Select Subscription:</label>
+                <select class="form-select" id="subscription" name="subscription" required>
+                    <option value="" disabled selected>Select a subscription</option>
+                    {% for sub in subscriptions %}
+                        <option value="{{ sub[0] }}" {% if selected_subscription_id == sub[0] %}selected{% endif %}>{{ sub[1] }}</option>
+                    {% endfor %}
+                </select>
             </div>
-            <div class="mb-3">
-                <label for="firewall_ip" class="form-label">Hub Firewall IP Address:</label>
-                <input type="text" name="firewall_ip" id="firewall_ip" class="form-control" required>
+            <div class="form-group mb-3">
+                <label class="form-label">Analysis Type:</label>
+                <div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="analysis_mode" id="mode_report" value="report" checked>
+                        <label class="form-check-label" for="mode_report">Technical Report</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="analysis_mode" id="mode_opinion" value="opinion">
+                        <label class="form-check-label" for="mode_opinion">Architectural Opinion (GPT-4)</label>
+                    </div>
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary">Validate Routing</button>
+            <div class="form-group mb-3">
+                <label for="openai_key" class="form-label">OpenAI API Key (required)</label>
+                <input type="password" name="openai_key" id="openai_key" class="form-control" placeholder="sk-... (will be used only for this run)" required>
+                <div class="form-text">A personal OpenAI API key is required for this action; it will be used only for this request and not stored on the server.</div>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary btn-lg">Run Auto-Validation</button>
+            </div>
         </form>
 
-        {% if issues is not none %}
-            {% if issues %}
-                <h2>Validation Issues</h2>
-                <table class="table table-dark table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th>Subscription</th>
-                            <th>Route Table Name</th>
-                            <th>Route Name</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for issue in issues %}
-                            <tr>
-                                <td>{{ issue.subscription }}</td>
-                                <td>{{ issue.route_table_name }}</td>
-                                <td>{{ issue.route_name }}</td>
-                                <td>{{ issue.description }}</td>
-                            </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            {% else %}
-                <p>No issues found. Routing configuration is correct.</p>
-            {% endif %}
+        {% if gpt_explanation %}
+                <div class="markdown-body">
+                    <h2>GPT Network Analysis & Explanation</h2>
+                    <!-- Primary: server-side rendered HTML (safe). -->
+                    <!-- We also render client-side from raw markdown to ensure formatting if server HTML was escaped. -->
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div id="gpt-report" class="markdown-body">
+                                {{ gpt_explanation | safe }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Client-side markdown renderer (fallback/override) -->
+                <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+                <script>
+                    (function(){
+                        try {
+                            // gpt_explanation_raw is passed from server; use tojson to safely embed
+                            const raw = {{ gpt_explanation_raw | tojson | safe }} || null;
+                            if (!raw) return;
+
+                            // Strip surrounding code fences if present
+                            let md = String(raw);
+                            // Remove any leading/trailing whitespace
+                            md = md.trim();
+                            // Regex to capture first fenced block content or fallback to raw
+                            const fenceMatch = md.match(/```(?:markdown)?\s*([\s\S]*?)\s*```/i);
+                            if (fenceMatch && fenceMatch[1]) {
+                                md = fenceMatch[1];
+                            } else {
+                                // If there are multiple lines starting with '# ' or similar, keep as-is
+                            }
+
+                            // Render markdown to HTML and replace content (client override)
+                            // If the markdown ends with a short incomplete token, append an ellipsis note
+                            const lines = md.split(/\r?\n/).filter(Boolean);
+                            const lastLine = lines.length ? lines[lines.length-1].trim() : '';
+                            if ((lastLine.length <= 3 && /[A-Za-z]$/.test(lastLine)) || (lastLine.length < 6 && !/[\.\:\-]$/.test(lastLine))) {
+                                md = md + "\n\n_(continued...)_";
+                            }
+                            const html = marked.parse(md);
+                            const container = document.getElementById('gpt-report');
+                            if (container) container.innerHTML = html;
+                        } catch (err) {
+                            console.error('Error rendering markdown client-side:', err);
+                        }
+                    })();
+                </script>
         {% endif %}
+    <!-- Validation Results removed: Only GPT-5 explanation will be shown -->
     </div>
 {% endblock %}
