@@ -13,20 +13,33 @@
     </div>
     <form method="post" class="mb-4">
         <div class="mb-3">
-            <label for="subscription_id" class="form-label">Subscription ID:</label>
-            <input type="text" name="subscription_id" id="subscription_id" class="form-control" required>
+            <label for="subscription_id" class="form-label">Subscription:</label>
+            <select name="subscription_id" id="subscription_id" class="form-select" required>
+                <option value="">-- Select subscription --</option>
+                {% for sub in subscriptions %}
+                <option value="{{ sub.id }}" {% if selected_subscription and selected_subscription == sub.id %}selected{% endif %}>{{ sub.name }} ({{ sub.id }})</option>
+                {% endfor %}
+            </select>
         </div>
         <div class="mb-3">
             <label for="vnet_name" class="form-label">VNet Name:</label>
-            <input type="text" name="vnet_name" id="vnet_name" class="form-control" required>
+            <select name="vnet_name" id="vnet_name" class="form-select" required>
+                <option value="">-- Select VNet --</option>
+                {% for v in vnets %}
+                <option value="{{ v.name }}" data-subscription="{{ v.subscription_id }}" {% if selected_vnet and selected_vnet == v.name %}selected{% endif %}>{{ v.name }} {% if v.resource_group_name %} ({{ v.resource_group_name }}){% endif %}</option>
+                {% endfor %}
+            </select>
         </div>
         <div class="mb-3">
-            <input type="checkbox" name="is_hub" id="is_hub" value="hub">
-            <label for="is_hub" class="form-label">Is Hub</label>
-        </div>
-        <div class="mb-3">
-            <input type="checkbox" name="is_spoke" id="is_spoke" value="spoke">
-            <label for="is_spoke" class="form-label">Is Spoke</label>
+            <label class="form-label me-3">Role:</label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="role" id="role_hub" value="hub" {% if is_hub %}checked{% endif %}>
+                <label class="form-check-label" for="role_hub">Hub</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="role" id="role_spoke" value="spoke" {% if is_spoke %}checked{% endif %}>
+                <label class="form-check-label" for="role_spoke">Spoke</label>
+            </div>
         </div>
         <button type="submit" class="btn btn-dark">Submit</button>
         <a href="/" class="btn btn-secondary">Back</a>
@@ -65,4 +78,48 @@
         </tbody>
     </table>
     {% endif %}
+    <script>
+        // Filter the VNet select options based on selected subscription
+        document.addEventListener('DOMContentLoaded', function () {
+            const subSelect = document.getElementById('subscription_id');
+            const vnetSelect = document.getElementById('vnet_name');
+
+            function filterVnets() {
+                const sub = subSelect.value;
+                for (const opt of Array.from(vnetSelect.options)) {
+                    const optSub = opt.getAttribute('data-subscription') || '';
+                    if (!opt.value) { // keep the placeholder
+                        opt.style.display = '';
+                        opt.disabled = false;
+                        continue;
+                    }
+                    if (!sub || optSub === sub) {
+                        opt.style.display = '';
+                        opt.disabled = false;
+                    } else {
+                        opt.style.display = 'none';
+                        opt.disabled = true;
+                    }
+                }
+
+                // Collect visible (enabled) options excluding placeholder
+                const visibleOptions = Array.from(vnetSelect.options).filter(o => o.value && !o.disabled);
+
+                // If the currently selected vnet is hidden or empty, try to auto-select a candidate
+                if (!vnetSelect.value || vnetSelect.selectedOptions.length === 0 || vnetSelect.selectedOptions[0].disabled) {
+                    if (visibleOptions.length === 1) {
+                        // Only one candidate — auto-select it
+                        vnetSelect.value = visibleOptions[0].value;
+                    } else {
+                        // Multiple or zero candidates — reset to placeholder
+                        vnetSelect.value = '';
+                    }
+                }
+            }
+
+            subSelect.addEventListener('change', filterVnets);
+            // initialize on load
+            filterVnets();
+        });
+    </script>
 {% endblock %}

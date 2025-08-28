@@ -23,7 +23,24 @@
         <button type="submit" class="btn btn-dark">Submit</button>
     </form>
     {% if results %}
-    <table class="table table-dark table-bordered table-hover">
+    <style>
+        .routes-table pre {
+            font-family: monospace;
+            white-space: pre-wrap; /* Wrap long text */
+            word-wrap: break-word;
+        }
+        .routes-table tbody tr:nth-child(odd) {
+            background-color: #f8f9fa; /* Light gray for zebra striping */
+        }
+        .routes-table tbody tr:nth-child(even) {
+            background-color: #e9ecef; /* Slightly darker gray */
+        }
+        .routes-table th {
+            text-align: center;
+        }
+    </style>
+
+    <table class="table table-dark table-bordered table-hover routes-table">
         <thead>
             <tr>
                 <th>VNet Name</th>
@@ -41,11 +58,36 @@
                 <td>{{ result[1]|safe }}</td>
                 <td>{{ result[2] }}</td>
                 <td>{{ result[3] }}</td>
-                <td><pre>{{ result[4] }}</pre></td>
+                <td>
+                    <table class="table table-sm table-bordered">
+                        {% if loop.first %} <!-- Ensure header is displayed only once -->
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Address Prefix</th>
+                                <th>Next Hop Type</th>
+                                <th>Next Hop IP</th>
+                            </tr>
+                        </thead>
+                        {% endif %}
+                        <tbody>
+                            {% for route in result[4].split('\n') if route.strip() %}
+                            {% set columns = route.split(maxsplit=3) %}
+                            <tr>
+                                <td>{{ columns[0] }}</td>
+                                <td>{{ columns[1] }}</td>
+                                <td>{{ columns[2] }}</td>
+                                <td>{{ columns[3] if columns|length > 3 else 'N/A' }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </td>
                 <td>{{ result[5] }}</td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
     {% endif %}
+    <p style="color: red;">Template updated: If you see this, the template is rendering correctly.</p>
 {% endblock %}

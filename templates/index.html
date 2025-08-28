@@ -29,8 +29,12 @@
                 <pre><code>python -m venv venv
 source venv/bin/activate  # On Windows use `venv\Scripts\activate`</code></pre>
             </li>
-            <li>Install the required dependencies:
-                <pre><code>pip install Flask azure-identity azure-mgmt-network azure-mgmt-resource tabulate</code></pre>
+            <li>Install the required dependencies (recommended inside the virtualenv):
+                <pre><code>pip install Flask azure-identity azure-mgmt-network azure-mgmt-resource tabulate weasyprint markdown
+
+# Optional: enable OpenAI-powered explanations
+pip install openai</code></pre>
+                <small class="text-muted">Note: On Ubuntu you must install system packages required by WeasyPrint: <code>sudo apt-get install libcairo2 libpango-1.0-0 libgdk-pixbuf2.0-0 shared-mime-info python3-dev build-essential</code></small>
             </li>
             <li>Set up Azure authentication:
                 <ul>

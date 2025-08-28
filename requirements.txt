@@ -1,0 +1,6 @@
+Flask
+azure-identity
+azure-mgmt-network
+azure-mgmt-resource
+tabulate
+openai
