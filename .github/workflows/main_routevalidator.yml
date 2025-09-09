@@ -35,12 +35,7 @@ jobs:
           source venv/bin/activate
       
       - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Install wkhtmltopdf for pdfkit
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y wkhtmltopdf        
+        run: pip install -r requirements.txt    
         
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
@@ -78,4 +73,9 @@ jobs:
         with:
           app-name: 'routevalidator'
           slot-name: 'Production'
+
+      - name: Install wkhtmltopdf for pdfkit
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y wkhtmltopdf  
           
