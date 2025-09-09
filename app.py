@@ -221,7 +221,7 @@ Usage:
 """
 
 from flask import Flask, render_template, request, send_file, make_response
-from weasyprint import HTML, CSS
+import pdfkit
 from azure.identity import DefaultAzureCredential
 from azure.mgmt.network import NetworkManagementClient
 from azure.mgmt.resource import SubscriptionClient
@@ -699,7 +699,19 @@ def generate_report():
 def download_report():
     data = environment_data
     rendered = render_template('report.html', data=data)
-    pdf = HTML(string=rendered).write_pdf(stylesheets=[CSS(string='@page { size: A4 landscape; margin: 1cm; }')])
+    # Configure pdfkit options if needed
+    options = {
+        'page-size': 'A4',
+        'orientation': 'Landscape',
+        'margin-top': '10mm',
+        'margin-bottom': '10mm',
+        'margin-left': '10mm',
+        'margin-right': '10mm',
+        'enable-local-file-access': None,  # Allow local file access for images/CSS
+    }
+    # If you see a permissions warning for /run/user/1000/, run this in your shell:
+    # sudo chmod 700 /run/user/1000/
+    pdf = pdfkit.from_string(rendered, False, options=options)
     response = make_response(pdf)
     response.headers['Content-Type'] = 'application/pdf'
     response.headers['Content-Disposition'] = 'attachment; filename=network_report.pdf'

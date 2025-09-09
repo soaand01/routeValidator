@@ -24,10 +24,10 @@ jobs:
         with:
           python-version: '3.13'
 
-      - name: Install system dependencies for WeasyPrint
+      - name: Install wkhtmltopdf for pdfkit
         run: |
           sudo apt-get update
-          sudo apt-get install -y libgobject-2.0-0 libcairo2 libpango-1.0-0 libgdk-pixbuf2.0-0 shared-mime-info python3-dev build-essential
+          sudo apt-get install -y wkhtmltopdf
 
       - name: Create and start virtual environment
         run: |
