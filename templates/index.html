@@ -4,9 +4,14 @@
 
 {% block content %}
     <div class="text-center">
-        <form action="/load-environment" method="post">
-            <button type="submit" class="btn btn-dark mb-4">Load Environment</button>
+        <form action="/load-environment" method="post" onsubmit="return confirm('Are you sure you want to load the environment?');">
+            <button type="submit" class="btn btn-primary">Load Environment</button>
         </form>
+            <div class="alert alert-warning mt-3" role="alert">
+                <strong>Warning:</strong> If you try to load the environment, it will fail.<br>
+                I have already fetched the data from my own environment for demo purpose.<br>
+                Follow the process below to run it locally in your machine and then the Load Environment will work.
+            </div>
         {% if message %}
             <div class="alert alert-success">{{ message }}</div>
         {% endif %}

@@ -40,17 +40,18 @@ Whether you're managing a complex network infrastructure or just getting started
 
     ```bash
     # Python packages
-    pip3 install Flask azure-identity azure-mgmt-network azure-mgmt-resource tabulate weasyprint markdown
+
+    pip3 install Flask azure-identity azure-mgmt-network azure-mgmt-resource tabulate pdfkit markdown
 
     # Optional: enable OpenAI-powered explanations (requires an API key)
     pip3 install openai
     ```
 
-    Note: `weasyprint` depends on system libraries. On Ubuntu install the following first:
+    Note: `pdfkit` requires the `wkhtmltopdf` binary. On Ubuntu install the following first:
 
     ```bash
     sudo apt-get update
-    sudo apt-get install -y libcairo2 libpango-1.0-0 libgdk-pixbuf2.0-0 shared-mime-info python3-dev build-essential
+    sudo apt-get install -y wkhtmltopdf
     ```
 
 3. **Set up Azure authentication:**
@@ -78,7 +79,7 @@ Whether you're managing a complex network infrastructure or just getting started
 - **azure-mgmt-network** – Azure SDK for Python to manage network resources.
 - **azure-mgmt-resource** – Azure SDK for Python to manage resource groups and resources.
 - **tabulate** – A library to format tabular data.
- - **weasyprint** – Convert rendered HTML to PDF (used for the download report).
+- **pdfkit** – Convert rendered HTML to PDF (used for the download report).
  - **markdown** – Server-side markdown renderer used to convert LLM output to HTML.
  - **openai** (optional) – If you want the app to call the OpenAI API to generate narrative explanations.
 
@@ -89,7 +90,7 @@ Whether you're managing a complex network infrastructure or just getting started
 Navigate to `http://127.0.0.1:5000/` in your web browser.
 
 - Click on **Load environment** to generate a .json file with your environment's data
-    - This .json will be stored under .environments/ directory. 
+    - This .json will be stored under environments/ directory. 
 - Select a subscription from the dropdown menu and click **Submit** to view VNets and their details.
 - Use the **"Validate Hub Peerings"** menu option to validate peerings for a specific VNet.
 
