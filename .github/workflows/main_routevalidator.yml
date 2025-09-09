@@ -74,8 +74,9 @@ jobs:
           app-name: 'routevalidator'
           slot-name: 'Production'
 
-      - name: Install wkhtmltopdf for pdfkit
-        run: |
-          apt-get update
-          apt-get install -y wkhtmltopdf  
+  # This temporally need to be executed manually via: https://routevalidator.scm.azurewebsites.net/webssh/host
+  # - name: Install wkhtmltopdf for pdfkit
+  #   run: |
+  #     apt-get update
+  #     apt-get install -y wkhtmltopdf
           
