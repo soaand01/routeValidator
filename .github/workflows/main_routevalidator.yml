@@ -27,7 +27,7 @@ jobs:
       - name: Install system dependencies for WeasyPrint
         run: |
           sudo apt-get update
-          sudo apt-get install -y libcairo2 libpango-1.0-0 libgdk-pixbuf2.0-0 shared-mime-info python3-dev build-essential
+          sudo apt-get install -y libgobject-2.0-0 libcairo2 libpango-1.0-0 libgdk-pixbuf2.0-0 shared-mime-info python3-dev build-essential
 
       - name: Create and start virtual environment
         run: |
