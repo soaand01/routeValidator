@@ -27,8 +27,8 @@ jobs:
 
       - name: Install wkhtmltopdf for pdfkit
         run: |
-          sudo apt-get update
-          sudo apt-get install -y wkhtmltopdf
+          apt-get update
+          apt-get install -y wkhtmltopdf
 
       - name: Fix permissions for wkhtmltopdf
         run: |
