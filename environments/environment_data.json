@@ -1,0 +1,2543 @@
+{
+    "subscriptions": [
+        [
+            "1a067293-8cab-4c81-a8a7-3b5508b6e2b4",
+            "AVD Landing Zone"
+        ],
+        [
+            "c5cbe54c-1255-479b-b8ba-75cde92a3ebf",
+            "Identity"
+        ],
+        [
+            "cad9967d-d1b4-4458-b16c-c52c9083e107",
+            "Management"
+        ],
+        [
+            "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "Connectivity"
+        ],
+        [
+            "5106da33-23ed-4d18-9baf-41143a5f22eb",
+            "ME-MngEnvMCAP027961-andlopes-6"
+        ],
+        [
+            "a72cc516-86c5-48ca-a775-ea5b1c61764c",
+            "ME-MngEnvMCAP027961-andlopes-5"
+        ]
+    ],
+    "vnets": [
+        {
+            "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/virtualNetworks/vnet-avd-test",
+            "name": "vnet-avd-test",
+            "type": "Microsoft.Network/virtualNetworks",
+            "location": "westeurope",
+            "tags": {},
+            "etag": "W/\"582d1b67-84de-4c2c-882a-7b1c6a3766bb\"",
+            "address_space": {
+                "address_prefixes": [
+                    "10.0.0.0/16"
+                ]
+            },
+            "subnets": [
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/virtualNetworks/vnet-avd-test/subnets/snet-avd-test",
+                    "name": "snet-avd-test",
+                    "etag": "W/\"582d1b67-84de-4c2c-882a-7b1c6a3766bb\"",
+                    "type": "Microsoft.Network/virtualNetworks/subnets",
+                    "address_prefixes": [
+                        "10.0.0.0/24"
+                    ],
+                    "network_security_group": {
+                        "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/networkSecurityGroups/nsg-avd-test"
+                    },
+                    "ip_configurations": [
+                        {
+                            "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/RG-AVD-TEST/providers/Microsoft.Network/networkInterfaces/VM-AVD-TEST-0-NIC/ipConfigurations/IPCONFIG"
+                        },
+                        {
+                            "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/RG-AVD-TEST/providers/Microsoft.Network/networkInterfaces/VM-TEST-0-NIC/ipConfigurations/IPCONFIG"
+                        },
+                        {
+                            "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/RG-AVD-TEST/providers/Microsoft.Network/networkInterfaces/VM-TEST-01-0-NIC/ipConfigurations/IPCONFIG"
+                        }
+                    ],
+                    "delegations": [],
+                    "provisioning_state": "Succeeded",
+                    "private_endpoint_network_policies": "Disabled",
+                    "private_link_service_network_policies": "Enabled",
+                    "default_outbound_access": false
+                }
+            ],
+            "virtual_network_peerings": [],
+            "resource_guid": "36994c94-65c7-4b0f-a80c-8117f855ab4f",
+            "provisioning_state": "Succeeded",
+            "enable_ddos_protection": false,
+            "encryption": {
+                "enabled": false,
+                "enforcement": "AllowUnencrypted"
+            },
+            "private_endpoint_v_net_policies": "Disabled",
+            "subscription_id": "1a067293-8cab-4c81-a8a7-3b5508b6e2b4",
+            "resource_group_name": "rg-avd-test"
+        },
+        {
+            "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-spoke-avd/providers/Microsoft.Network/virtualNetworks/vnet-avd-spoke-01",
+            "name": "vnet-avd-spoke-01",
+            "type": "Microsoft.Network/virtualNetworks",
+            "location": "westeurope",
+            "tags": {},
+            "etag": "W/\"fc8307f6-5f0a-4107-a2b7-973769701899\"",
+            "address_space": {
+                "address_prefixes": [
+                    "192.168.0.0/14"
+                ]
+            },
+            "subnets": [
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-spoke-avd/providers/Microsoft.Network/virtualNetworks/vnet-avd-spoke-01/subnets/snet-avd-spoke-01",
+                    "name": "snet-avd-spoke-01",
+                    "etag": "W/\"fc8307f6-5f0a-4107-a2b7-973769701899\"",
+                    "type": "Microsoft.Network/virtualNetworks/subnets",
+                    "address_prefixes": [
+                        "192.168.0.0/24"
+                    ],
+                    "network_security_group": {
+                        "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/networkSecurityGroups/nsg-avd-test"
+                    },
+                    "delegations": [],
+                    "provisioning_state": "Succeeded",
+                    "private_endpoint_network_policies": "Disabled",
+                    "private_link_service_network_policies": "Enabled",
+                    "default_outbound_access": false
+                }
+            ],
+            "virtual_network_peerings": [
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-spoke-avd/providers/Microsoft.Network/virtualNetworks/vnet-avd-spoke-01/virtualNetworkPeerings/peering-hub-westeurope-to-hub",
+                    "name": "peering-hub-westeurope-to-hub",
+                    "etag": "W/\"fc8307f6-5f0a-4107-a2b7-973769701899\"",
+                    "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+                    "allow_virtual_network_access": true,
+                    "allow_forwarded_traffic": true,
+                    "allow_gateway_transit": false,
+                    "use_remote_gateways": true,
+                    "remote_virtual_network": {
+                        "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope"
+                    },
+                    "remote_address_space": {
+                        "address_prefixes": [
+                            "10.0.0.0/22"
+                        ]
+                    },
+                    "remote_virtual_network_address_space": {
+                        "address_prefixes": [
+                            "10.0.0.0/22"
+                        ]
+                    },
+                    "peering_state": "Connected",
+                    "peering_sync_level": "FullyInSync",
+                    "provisioning_state": "Succeeded",
+                    "do_not_verify_remote_gateways": false,
+                    "resource_guid": "07c4d6a5-9a9e-055e-2075-849d51d2348d",
+                    "peer_complete_vnets": true
+                }
+            ],
+            "resource_guid": "459c4890-202e-4867-adea-ae23b3f8cd69",
+            "provisioning_state": "Succeeded",
+            "enable_ddos_protection": false,
+            "encryption": {
+                "enabled": false,
+                "enforcement": "AllowUnencrypted"
+            },
+            "private_endpoint_v_net_policies": "Disabled",
+            "subscription_id": "1a067293-8cab-4c81-a8a7-3b5508b6e2b4",
+            "resource_group_name": "rg-spoke-avd"
+        },
+        {
+            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-northeurope",
+            "name": "vnet-hub-northeurope",
+            "type": "Microsoft.Network/virtualNetworks",
+            "location": "northeurope",
+            "tags": {
+                "source": "Azure Landing Zones Accelerator",
+                "deployed_by": "terraform"
+            },
+            "etag": "W/\"86509fdf-1146-4594-8e07-bb1930c4c071\"",
+            "address_space": {
+                "address_prefixes": [
+                    "10.1.0.0/22"
+                ]
+            },
+            "dhcp_options": {
+                "dns_servers": []
+            },
+            "flow_timeout_in_minutes": 4,
+            "subnets": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-northeurope/subnets/dns-resolver",
+                    "name": "dns-resolver",
+                    "etag": "W/\"86509fdf-1146-4594-8e07-bb1930c4c071\"",
+                    "type": "Microsoft.Network/virtualNetworks/subnets",
+                    "address_prefix": "10.1.0.160/28",
+                    "network_security_group": {
+                        "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-northeurope-dns-resolver-nsg-northeurope"
+                    },
+                    "service_endpoints": [],
+                    "ip_configurations": [
+                        {
+                            "id": "/subscriptions/2c93222d-da7d-4b44-8642-b9e4b8f24600/resourceGroups/rg-prod-northeurope-main-endpoints/providers/Microsoft.Network/loadBalancers/lbi-prod-northeurope-main-ept-952d32a3ac7e4e93b3ee3cbcda3dc626/frontendIPConfigurations/frontend-ipconfig"
+                        }
+                    ],
+                    "service_association_links": [
+                        {
+                            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-northeurope/subnets/dns-resolver/serviceAssociationLinks/dnsResolverLink",
+                            "name": "dnsResolverLink",
+                            "etag": "W/\"86509fdf-1146-4594-8e07-bb1930c4c071\"",
+                            "type": "Microsoft.Network/virtualNetworks/subnets/serviceAssociationLinks",
+                            "linked_resource_type": "Microsoft.Network/dnsResolvers",
+                            "link": "/InboundEndpoint/952d32a3-ac7e-4e93-b3ee-3cbcda3dc626",
+                            "provisioning_state": "Succeeded",
+                            "allow_delete": false,
+                            "locations": []
+                        }
+                    ],
+                    "delegations": [
+                        {
+                            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-northeurope/subnets/dns-resolver/delegations/Microsoft.Network.dnsResolvers",
+                            "name": "Microsoft.Network.dnsResolvers",
+                            "etag": "W/\"86509fdf-1146-4594-8e07-bb1930c4c071\"",
+                            "type": "Microsoft.Network/virtualNetworks/subnets/delegations",
+                            "service_name": "Microsoft.Network/dnsResolvers",
+                            "actions": [
+                                "Microsoft.Network/virtualNetworks/subnets/join/action"
+                            ],
+                            "provisioning_state": "Succeeded"
+                        }
+                    ],
+                    "provisioning_state": "Succeeded",
+                    "private_endpoint_network_policies": "Enabled",
+                    "private_link_service_network_policies": "Enabled",
+                    "default_outbound_access": false
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-northeurope/subnets/AzureFirewallManagementSubnet",
+                    "name": "AzureFirewallManagementSubnet",
+                    "etag": "W/\"86509fdf-1146-4594-8e07-bb1930c4c071\"",
+                    "type": "Microsoft.Network/virtualNetworks/subnets",
+                    "address_prefix": "10.1.0.192/26",
+                    "service_endpoints": [],
+                    "ip_configurations": [
+                        {
+                            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-NORTHEUROPE/providers/Microsoft.Network/azureFirewalls/FW-HUB-NORTHEUROPE/azureFirewallIpConfigurations/DEFAULTMGMT"
+                        },
+                        {
+                            "id": "/subscriptions/737f5008-b6c6-4f4d-ad4c-a97d8a6f3ed2/resourceGroups/ARMRG-53F249BB-9C14-4B6D-B3E0-32E6E00E0FDC/providers/Microsoft.Network/loadBalancers/GSA-53F249BB-9C14LB/frontendIPConfigurations/GSA-53F249BB-9C14LBFEPOOL-MGMTIPCONFIG-MGMT"
+                        },
+                        {
+                            "id": "/subscriptions/737f5008-b6c6-4f4d-ad4c-a97d8a6f3ed2/resourceGroups/ARMRG-53F249BB-9C14-4B6D-B3E0-32E6E00E0FDC/PROVIDERS/MICROSOFT.COMPUTE/VIRTUALMACHINESCALESETS/GSA-53F249BB-9C14/VIRTUALMACHINES/0/NETWORKINTERFACES/GSA-53F249BB-9C14NIC-MGMT/ipConfigurations/GSA-53F249BB-9C14IPCONFIG-MGMT"
+                        },
+                        {
+                            "id": "/subscriptions/737f5008-b6c6-4f4d-ad4c-a97d8a6f3ed2/resourceGroups/ARMRG-53F249BB-9C14-4B6D-B3E0-32E6E00E0FDC/PROVIDERS/MICROSOFT.COMPUTE/VIRTUALMACHINESCALESETS/GSA-53F249BB-9C14/VIRTUALMACHINES/2/NETWORKINTERFACES/GSA-53F249BB-9C14NIC-MGMT/ipConfigurations/GSA-53F249BB-9C14IPCONFIG-MGMT"
+                        }
+                    ],
+                    "delegations": [],
+                    "provisioning_state": "Succeeded",
+                    "private_endpoint_network_policies": "Enabled",
+                    "private_link_service_network_policies": "Enabled",
+                    "default_outbound_access": false
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-northeurope/subnets/GatewaySubnet",
+                    "name": "GatewaySubnet",
+                    "etag": "W/\"86509fdf-1146-4594-8e07-bb1930c4c071\"",
+                    "type": "Microsoft.Network/virtualNetworks/subnets",
+                    "address_prefix": "10.1.0.128/27",
+                    "service_endpoints": [],
+                    "ip_configurations": [
+                        {
+                            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-NORTHEUROPE/providers/Microsoft.Network/virtualNetworkGateways/VGW-HUB-ER-NORTHEUROPE/ipConfigurations/VNETGATEWAYCONFIGDEFAULT"
+                        },
+                        {
+                            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-NORTHEUROPE/providers/Microsoft.Network/virtualNetworkGateways/VGW-HUB-VPN-NORTHEUROPE/ipConfigurations/VNETGATEWAYCONFIGACTIVE_ACTIVE_1"
+                        },
+                        {
+                            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-NORTHEUROPE/providers/Microsoft.Network/virtualNetworkGateways/VGW-HUB-VPN-NORTHEUROPE/ipConfigurations/VNETGATEWAYCONFIGACTIVE_ACTIVE_2"
+                        }
+                    ],
+                    "delegations": [],
+                    "provisioning_state": "Succeeded",
+                    "private_endpoint_network_policies": "Enabled",
+                    "private_link_service_network_policies": "Enabled",
+                    "default_outbound_access": false
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-northeurope/subnets/AzureFirewallSubnet",
+                    "name": "AzureFirewallSubnet",
+                    "etag": "W/\"86509fdf-1146-4594-8e07-bb1930c4c071\"",
+                    "type": "Microsoft.Network/virtualNetworks/subnets",
+                    "address_prefix": "10.1.0.0/26",
+                    "route_table": {
+                        "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/routeTables/rt-hub-fw-northeurope"
+                    },
+                    "service_endpoints": [],
+                    "ip_configurations": [
+                        {
+                            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-NORTHEUROPE/providers/Microsoft.Network/azureFirewalls/FW-HUB-NORTHEUROPE/azureFirewallIpConfigurations/DEFAULT"
+                        }
+                    ],
+                    "delegations": [],
+                    "provisioning_state": "Succeeded",
+                    "private_endpoint_network_policies": "Enabled",
+                    "private_link_service_network_policies": "Enabled",
+                    "default_outbound_access": false
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-northeurope/subnets/AzureBastionSubnet",
+                    "name": "AzureBastionSubnet",
+                    "etag": "W/\"86509fdf-1146-4594-8e07-bb1930c4c071\"",
+                    "type": "Microsoft.Network/virtualNetworks/subnets",
+                    "address_prefix": "10.1.0.64/26",
+                    "network_security_group": {
+                        "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-northeurope-AzureBastionSubnet-nsg-northeurope"
+                    },
+                    "service_endpoints": [],
+                    "ip_configurations": [
+                        {
+                            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-NORTHEUROPE/providers/Microsoft.Network/bastionHosts/BAS-HUB-NORTHEUROPE/bastionHostIpConfigurations/BASTION-IP-CONFIG"
+                        }
+                    ],
+                    "delegations": [],
+                    "provisioning_state": "Succeeded",
+                    "private_endpoint_network_policies": "Enabled",
+                    "private_link_service_network_policies": "Enabled",
+                    "default_outbound_access": false
+                }
+            ],
+            "virtual_network_peerings": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-northeurope/virtualNetworkPeerings/vnet-hub-northeurope-vnet-hub-westeurope",
+                    "name": "vnet-hub-northeurope-vnet-hub-westeurope",
+                    "etag": "W/\"86509fdf-1146-4594-8e07-bb1930c4c071\"",
+                    "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+                    "allow_virtual_network_access": true,
+                    "allow_forwarded_traffic": true,
+                    "allow_gateway_transit": true,
+                    "use_remote_gateways": false,
+                    "remote_virtual_network": {
+                        "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope"
+                    },
+                    "remote_address_space": {
+                        "address_prefixes": [
+                            "10.0.0.0/22"
+                        ]
+                    },
+                    "remote_virtual_network_address_space": {
+                        "address_prefixes": [
+                            "10.0.0.0/22"
+                        ]
+                    },
+                    "peering_state": "Connected",
+                    "peering_sync_level": "FullyInSync",
+                    "provisioning_state": "Succeeded",
+                    "do_not_verify_remote_gateways": false,
+                    "resource_guid": "39bca500-daf3-003b-178b-ee1b581267e6",
+                    "peer_complete_vnets": true
+                }
+            ],
+            "resource_guid": "7be43b35-6043-4d02-9a14-c4a5ba389e02",
+            "provisioning_state": "Succeeded",
+            "enable_ddos_protection": true,
+            "ddos_protection_plan": {
+                "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-ddos-westeurope/providers/Microsoft.Network/ddosProtectionPlans/ddos-westeurope"
+            },
+            "private_endpoint_v_net_policies": "Disabled",
+            "subscription_id": "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "resource_group_name": "rg-hub-northeurope"
+        },
+        {
+            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope",
+            "name": "vnet-hub-westeurope",
+            "type": "Microsoft.Network/virtualNetworks",
+            "location": "westeurope",
+            "tags": {
+                "deployed_by": "terraform",
+                "source": "Azure Landing Zones Accelerator"
+            },
+            "etag": "W/\"4da2b9cb-6fa0-4c82-ad55-82fff0c4a340\"",
+            "address_space": {
+                "address_prefixes": [
+                    "10.0.0.0/22"
+                ]
+            },
+            "dhcp_options": {
+                "dns_servers": []
+            },
+            "flow_timeout_in_minutes": 4,
+            "subnets": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope/subnets/AzureFirewallManagementSubnet",
+                    "name": "AzureFirewallManagementSubnet",
+                    "etag": "W/\"4da2b9cb-6fa0-4c82-ad55-82fff0c4a340\"",
+                    "type": "Microsoft.Network/virtualNetworks/subnets",
+                    "address_prefix": "10.0.0.192/26",
+                    "service_endpoints": [],
+                    "ip_configurations": [
+                        {
+                            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-WESTEUROPE/providers/Microsoft.Network/azureFirewalls/FW-HUB-WESTEUROPE/azureFirewallIpConfigurations/DEFAULTMGMT"
+                        },
+                        {
+                            "id": "/subscriptions/7adb06e0-e0d8-4d1d-afd0-40108c6a9e03/resourceGroups/ARMRG-FC3F55EC-7EC8-448B-9830-BF6AB8CEBA26/providers/Microsoft.Network/loadBalancers/GSA-FC3F55EC-7EC8LB/frontendIPConfigurations/GSA-FC3F55EC-7EC8LBFEPOOL-MGMTIPCONFIG-MGMT"
+                        },
+                        {
+                            "id": "/subscriptions/7adb06e0-e0d8-4d1d-afd0-40108c6a9e03/resourceGroups/ARMRG-FC3F55EC-7EC8-448B-9830-BF6AB8CEBA26/PROVIDERS/MICROSOFT.COMPUTE/VIRTUALMACHINESCALESETS/GSA-FC3F55EC-7EC8/VIRTUALMACHINES/1/NETWORKINTERFACES/GSA-FC3F55EC-7EC8NIC-MGMT/ipConfigurations/GSA-FC3F55EC-7EC8IPCONFIG-MGMT"
+                        },
+                        {
+                            "id": "/subscriptions/7adb06e0-e0d8-4d1d-afd0-40108c6a9e03/resourceGroups/ARMRG-FC3F55EC-7EC8-448B-9830-BF6AB8CEBA26/PROVIDERS/MICROSOFT.COMPUTE/VIRTUALMACHINESCALESETS/GSA-FC3F55EC-7EC8/VIRTUALMACHINES/2/NETWORKINTERFACES/GSA-FC3F55EC-7EC8NIC-MGMT/ipConfigurations/GSA-FC3F55EC-7EC8IPCONFIG-MGMT"
+                        }
+                    ],
+                    "delegations": [],
+                    "provisioning_state": "Succeeded",
+                    "private_endpoint_network_policies": "Enabled",
+                    "private_link_service_network_policies": "Enabled",
+                    "default_outbound_access": false
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope/subnets/dns-resolver",
+                    "name": "dns-resolver",
+                    "etag": "W/\"4da2b9cb-6fa0-4c82-ad55-82fff0c4a340\"",
+                    "type": "Microsoft.Network/virtualNetworks/subnets",
+                    "address_prefix": "10.0.0.160/28",
+                    "network_security_group": {
+                        "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-westeurope-dns-resolver-nsg-westeurope"
+                    },
+                    "service_endpoints": [],
+                    "ip_configurations": [
+                        {
+                            "id": "/subscriptions/c065de23-cfc3-44c0-ad16-126f4ec47f36/resourceGroups/rg-prod-westeurope-main-endpoints/providers/Microsoft.Network/loadBalancers/lbi-prod-westeurope-main-ept-430d7895ecee4741bfd1459462fee3d5/frontendIPConfigurations/frontend-ipconfig"
+                        }
+                    ],
+                    "service_association_links": [
+                        {
+                            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope/subnets/dns-resolver/serviceAssociationLinks/dnsResolverLink",
+                            "name": "dnsResolverLink",
+                            "etag": "W/\"4da2b9cb-6fa0-4c82-ad55-82fff0c4a340\"",
+                            "type": "Microsoft.Network/virtualNetworks/subnets/serviceAssociationLinks",
+                            "linked_resource_type": "Microsoft.Network/dnsResolvers",
+                            "link": "/InboundEndpoint/430d7895-ecee-4741-bfd1-459462fee3d5",
+                            "provisioning_state": "Succeeded",
+                            "allow_delete": false,
+                            "locations": []
+                        }
+                    ],
+                    "delegations": [
+                        {
+                            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope/subnets/dns-resolver/delegations/Microsoft.Network.dnsResolvers",
+                            "name": "Microsoft.Network.dnsResolvers",
+                            "etag": "W/\"4da2b9cb-6fa0-4c82-ad55-82fff0c4a340\"",
+                            "type": "Microsoft.Network/virtualNetworks/subnets/delegations",
+                            "service_name": "Microsoft.Network/dnsResolvers",
+                            "actions": [
+                                "Microsoft.Network/virtualNetworks/subnets/join/action"
+                            ],
+                            "provisioning_state": "Succeeded"
+                        }
+                    ],
+                    "provisioning_state": "Succeeded",
+                    "private_endpoint_network_policies": "Enabled",
+                    "private_link_service_network_policies": "Enabled",
+                    "default_outbound_access": false
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope/subnets/GatewaySubnet",
+                    "name": "GatewaySubnet",
+                    "etag": "W/\"4da2b9cb-6fa0-4c82-ad55-82fff0c4a340\"",
+                    "type": "Microsoft.Network/virtualNetworks/subnets",
+                    "address_prefix": "10.0.0.128/27",
+                    "service_endpoints": [],
+                    "ip_configurations": [
+                        {
+                            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-WESTEUROPE/providers/Microsoft.Network/virtualNetworkGateways/VGW-HUB-ER-WESTEUROPE/ipConfigurations/VNETGATEWAYCONFIGDEFAULT"
+                        },
+                        {
+                            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-WESTEUROPE/providers/Microsoft.Network/virtualNetworkGateways/VGW-HUB-VPN-WESTEUROPE/ipConfigurations/VNETGATEWAYCONFIGACTIVE_ACTIVE_1"
+                        },
+                        {
+                            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-WESTEUROPE/providers/Microsoft.Network/virtualNetworkGateways/VGW-HUB-VPN-WESTEUROPE/ipConfigurations/VNETGATEWAYCONFIGACTIVE_ACTIVE_2"
+                        }
+                    ],
+                    "delegations": [],
+                    "provisioning_state": "Succeeded",
+                    "private_endpoint_network_policies": "Enabled",
+                    "private_link_service_network_policies": "Enabled",
+                    "default_outbound_access": false
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope/subnets/AzureBastionSubnet",
+                    "name": "AzureBastionSubnet",
+                    "etag": "W/\"4da2b9cb-6fa0-4c82-ad55-82fff0c4a340\"",
+                    "type": "Microsoft.Network/virtualNetworks/subnets",
+                    "address_prefix": "10.0.0.64/26",
+                    "network_security_group": {
+                        "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-westeurope-AzureBastionSubnet-nsg-westeurope"
+                    },
+                    "service_endpoints": [],
+                    "ip_configurations": [
+                        {
+                            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-WESTEUROPE/providers/Microsoft.Network/bastionHosts/BAS-HUB-WESTEUROPE/bastionHostIpConfigurations/BASTION-IP-CONFIG"
+                        }
+                    ],
+                    "delegations": [],
+                    "provisioning_state": "Succeeded",
+                    "private_endpoint_network_policies": "Enabled",
+                    "private_link_service_network_policies": "Enabled",
+                    "default_outbound_access": false
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope/subnets/AzureFirewallSubnet",
+                    "name": "AzureFirewallSubnet",
+                    "etag": "W/\"4da2b9cb-6fa0-4c82-ad55-82fff0c4a340\"",
+                    "type": "Microsoft.Network/virtualNetworks/subnets",
+                    "address_prefix": "10.0.0.0/26",
+                    "route_table": {
+                        "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/routeTables/rt-hub-fw-westeurope"
+                    },
+                    "service_endpoints": [],
+                    "ip_configurations": [
+                        {
+                            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-WESTEUROPE/providers/Microsoft.Network/azureFirewalls/FW-HUB-WESTEUROPE/azureFirewallIpConfigurations/DEFAULT"
+                        }
+                    ],
+                    "delegations": [],
+                    "provisioning_state": "Succeeded",
+                    "private_endpoint_network_policies": "Enabled",
+                    "private_link_service_network_policies": "Enabled",
+                    "default_outbound_access": false
+                }
+            ],
+            "virtual_network_peerings": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope/virtualNetworkPeerings/vnet-hub-westeurope-vnet-hub-northeurope",
+                    "name": "vnet-hub-westeurope-vnet-hub-northeurope",
+                    "etag": "W/\"4da2b9cb-6fa0-4c82-ad55-82fff0c4a340\"",
+                    "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+                    "allow_virtual_network_access": true,
+                    "allow_forwarded_traffic": true,
+                    "allow_gateway_transit": true,
+                    "use_remote_gateways": false,
+                    "remote_virtual_network": {
+                        "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-northeurope"
+                    },
+                    "remote_address_space": {
+                        "address_prefixes": [
+                            "10.1.0.0/22"
+                        ]
+                    },
+                    "remote_virtual_network_address_space": {
+                        "address_prefixes": [
+                            "10.1.0.0/22"
+                        ]
+                    },
+                    "peering_state": "Connected",
+                    "peering_sync_level": "FullyInSync",
+                    "provisioning_state": "Succeeded",
+                    "do_not_verify_remote_gateways": false,
+                    "resource_guid": "39bca500-daf3-003b-178b-ee1b581267e6",
+                    "peer_complete_vnets": true
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope/virtualNetworkPeerings/peering-spoke-to-hub-westeurope",
+                    "name": "peering-spoke-to-hub-westeurope",
+                    "etag": "W/\"4da2b9cb-6fa0-4c82-ad55-82fff0c4a340\"",
+                    "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+                    "allow_virtual_network_access": true,
+                    "allow_forwarded_traffic": false,
+                    "allow_gateway_transit": true,
+                    "use_remote_gateways": false,
+                    "remote_virtual_network": {
+                        "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-spoke-avd/providers/Microsoft.Network/virtualNetworks/vnet-avd-spoke-01"
+                    },
+                    "remote_address_space": {
+                        "address_prefixes": [
+                            "192.168.0.0/14"
+                        ]
+                    },
+                    "remote_virtual_network_address_space": {
+                        "address_prefixes": [
+                            "192.168.0.0/14"
+                        ]
+                    },
+                    "remote_virtual_network_encryption": {
+                        "enabled": false,
+                        "enforcement": "AllowUnencrypted"
+                    },
+                    "peering_state": "Connected",
+                    "peering_sync_level": "FullyInSync",
+                    "provisioning_state": "Succeeded",
+                    "do_not_verify_remote_gateways": false,
+                    "resource_guid": "07c4d6a5-9a9e-055e-2075-849d51d2348d",
+                    "peer_complete_vnets": true
+                }
+            ],
+            "resource_guid": "42589e35-bab0-4d39-8d9f-2abee22af9e4",
+            "provisioning_state": "Succeeded",
+            "enable_ddos_protection": true,
+            "ddos_protection_plan": {
+                "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-ddos-westeurope/providers/Microsoft.Network/ddosProtectionPlans/ddos-westeurope"
+            },
+            "private_endpoint_v_net_policies": "Disabled",
+            "subscription_id": "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "resource_group_name": "rg-hub-westeurope"
+        }
+    ],
+    "subnets": [
+        {
+            "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/virtualNetworks/vnet-avd-test/subnets/snet-avd-test",
+            "name": "snet-avd-test",
+            "etag": "W/\"582d1b67-84de-4c2c-882a-7b1c6a3766bb\"",
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "address_prefixes": [
+                "10.0.0.0/24"
+            ],
+            "network_security_group": {
+                "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/networkSecurityGroups/nsg-avd-test"
+            },
+            "ip_configurations": [
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/RG-AVD-TEST/providers/Microsoft.Network/networkInterfaces/VM-AVD-TEST-0-NIC/ipConfigurations/IPCONFIG"
+                },
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/RG-AVD-TEST/providers/Microsoft.Network/networkInterfaces/VM-TEST-0-NIC/ipConfigurations/IPCONFIG"
+                },
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/RG-AVD-TEST/providers/Microsoft.Network/networkInterfaces/VM-TEST-01-0-NIC/ipConfigurations/IPCONFIG"
+                }
+            ],
+            "delegations": [],
+            "provisioning_state": "Succeeded",
+            "private_endpoint_network_policies": "Disabled",
+            "private_link_service_network_policies": "Enabled",
+            "default_outbound_access": false,
+            "subscription_id": "1a067293-8cab-4c81-a8a7-3b5508b6e2b4",
+            "resource_group_name": "rg-avd-test",
+            "virtual_network_name": "vnet-avd-test"
+        },
+        {
+            "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-spoke-avd/providers/Microsoft.Network/virtualNetworks/vnet-avd-spoke-01/subnets/snet-avd-spoke-01",
+            "name": "snet-avd-spoke-01",
+            "etag": "W/\"fc8307f6-5f0a-4107-a2b7-973769701899\"",
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "address_prefixes": [
+                "192.168.0.0/24"
+            ],
+            "network_security_group": {
+                "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/networkSecurityGroups/nsg-avd-test"
+            },
+            "delegations": [],
+            "provisioning_state": "Succeeded",
+            "private_endpoint_network_policies": "Disabled",
+            "private_link_service_network_policies": "Enabled",
+            "default_outbound_access": false,
+            "subscription_id": "1a067293-8cab-4c81-a8a7-3b5508b6e2b4",
+            "resource_group_name": "rg-spoke-avd",
+            "virtual_network_name": "vnet-avd-spoke-01"
+        },
+        {
+            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-northeurope/subnets/dns-resolver",
+            "name": "dns-resolver",
+            "etag": "W/\"86509fdf-1146-4594-8e07-bb1930c4c071\"",
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "address_prefix": "10.1.0.160/28",
+            "network_security_group": {
+                "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-northeurope-dns-resolver-nsg-northeurope"
+            },
+            "service_endpoints": [],
+            "ip_configurations": [
+                {
+                    "id": "/subscriptions/2c93222d-da7d-4b44-8642-b9e4b8f24600/resourceGroups/rg-prod-northeurope-main-endpoints/providers/Microsoft.Network/loadBalancers/lbi-prod-northeurope-main-ept-952d32a3ac7e4e93b3ee3cbcda3dc626/frontendIPConfigurations/frontend-ipconfig"
+                }
+            ],
+            "service_association_links": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-northeurope/subnets/dns-resolver/serviceAssociationLinks/dnsResolverLink",
+                    "name": "dnsResolverLink",
+                    "etag": "W/\"86509fdf-1146-4594-8e07-bb1930c4c071\"",
+                    "type": "Microsoft.Network/virtualNetworks/subnets/serviceAssociationLinks",
+                    "linked_resource_type": "Microsoft.Network/dnsResolvers",
+                    "link": "/InboundEndpoint/952d32a3-ac7e-4e93-b3ee-3cbcda3dc626",
+                    "provisioning_state": "Succeeded",
+                    "allow_delete": false,
+                    "locations": []
+                }
+            ],
+            "delegations": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-northeurope/subnets/dns-resolver/delegations/Microsoft.Network.dnsResolvers",
+                    "name": "Microsoft.Network.dnsResolvers",
+                    "etag": "W/\"86509fdf-1146-4594-8e07-bb1930c4c071\"",
+                    "type": "Microsoft.Network/virtualNetworks/subnets/delegations",
+                    "service_name": "Microsoft.Network/dnsResolvers",
+                    "actions": [
+                        "Microsoft.Network/virtualNetworks/subnets/join/action"
+                    ],
+                    "provisioning_state": "Succeeded"
+                }
+            ],
+            "provisioning_state": "Succeeded",
+            "private_endpoint_network_policies": "Enabled",
+            "private_link_service_network_policies": "Enabled",
+            "default_outbound_access": false,
+            "subscription_id": "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "resource_group_name": "rg-hub-northeurope",
+            "virtual_network_name": "vnet-hub-northeurope"
+        },
+        {
+            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-northeurope/subnets/AzureFirewallManagementSubnet",
+            "name": "AzureFirewallManagementSubnet",
+            "etag": "W/\"86509fdf-1146-4594-8e07-bb1930c4c071\"",
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "address_prefix": "10.1.0.192/26",
+            "service_endpoints": [],
+            "ip_configurations": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-NORTHEUROPE/providers/Microsoft.Network/azureFirewalls/FW-HUB-NORTHEUROPE/azureFirewallIpConfigurations/DEFAULTMGMT"
+                }
+            ],
+            "delegations": [],
+            "provisioning_state": "Succeeded",
+            "private_endpoint_network_policies": "Enabled",
+            "private_link_service_network_policies": "Enabled",
+            "default_outbound_access": false,
+            "subscription_id": "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "resource_group_name": "rg-hub-northeurope",
+            "virtual_network_name": "vnet-hub-northeurope"
+        },
+        {
+            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-northeurope/subnets/GatewaySubnet",
+            "name": "GatewaySubnet",
+            "etag": "W/\"86509fdf-1146-4594-8e07-bb1930c4c071\"",
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "address_prefix": "10.1.0.128/27",
+            "service_endpoints": [],
+            "ip_configurations": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-NORTHEUROPE/providers/Microsoft.Network/virtualNetworkGateways/VGW-HUB-ER-NORTHEUROPE/ipConfigurations/VNETGATEWAYCONFIGDEFAULT"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-NORTHEUROPE/providers/Microsoft.Network/virtualNetworkGateways/VGW-HUB-VPN-NORTHEUROPE/ipConfigurations/VNETGATEWAYCONFIGACTIVE_ACTIVE_1"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-NORTHEUROPE/providers/Microsoft.Network/virtualNetworkGateways/VGW-HUB-VPN-NORTHEUROPE/ipConfigurations/VNETGATEWAYCONFIGACTIVE_ACTIVE_2"
+                }
+            ],
+            "delegations": [],
+            "provisioning_state": "Succeeded",
+            "private_endpoint_network_policies": "Enabled",
+            "private_link_service_network_policies": "Enabled",
+            "default_outbound_access": false,
+            "subscription_id": "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "resource_group_name": "rg-hub-northeurope",
+            "virtual_network_name": "vnet-hub-northeurope"
+        },
+        {
+            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-northeurope/subnets/AzureFirewallSubnet",
+            "name": "AzureFirewallSubnet",
+            "etag": "W/\"86509fdf-1146-4594-8e07-bb1930c4c071\"",
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "address_prefix": "10.1.0.0/26",
+            "route_table": {
+                "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/routeTables/rt-hub-fw-northeurope"
+            },
+            "service_endpoints": [],
+            "ip_configurations": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-NORTHEUROPE/providers/Microsoft.Network/azureFirewalls/FW-HUB-NORTHEUROPE/azureFirewallIpConfigurations/DEFAULT"
+                }
+            ],
+            "delegations": [],
+            "provisioning_state": "Succeeded",
+            "private_endpoint_network_policies": "Enabled",
+            "private_link_service_network_policies": "Enabled",
+            "default_outbound_access": false,
+            "subscription_id": "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "resource_group_name": "rg-hub-northeurope",
+            "virtual_network_name": "vnet-hub-northeurope"
+        },
+        {
+            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-northeurope/subnets/AzureBastionSubnet",
+            "name": "AzureBastionSubnet",
+            "etag": "W/\"86509fdf-1146-4594-8e07-bb1930c4c071\"",
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "address_prefix": "10.1.0.64/26",
+            "network_security_group": {
+                "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-northeurope-AzureBastionSubnet-nsg-northeurope"
+            },
+            "service_endpoints": [],
+            "ip_configurations": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-NORTHEUROPE/providers/Microsoft.Network/bastionHosts/BAS-HUB-NORTHEUROPE/bastionHostIpConfigurations/BASTION-IP-CONFIG"
+                }
+            ],
+            "delegations": [],
+            "provisioning_state": "Succeeded",
+            "private_endpoint_network_policies": "Enabled",
+            "private_link_service_network_policies": "Enabled",
+            "default_outbound_access": false,
+            "subscription_id": "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "resource_group_name": "rg-hub-northeurope",
+            "virtual_network_name": "vnet-hub-northeurope"
+        },
+        {
+            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope/subnets/AzureFirewallManagementSubnet",
+            "name": "AzureFirewallManagementSubnet",
+            "etag": "W/\"4da2b9cb-6fa0-4c82-ad55-82fff0c4a340\"",
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "address_prefix": "10.0.0.192/26",
+            "service_endpoints": [],
+            "ip_configurations": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-WESTEUROPE/providers/Microsoft.Network/azureFirewalls/FW-HUB-WESTEUROPE/azureFirewallIpConfigurations/DEFAULTMGMT"
+                }
+            ],
+            "delegations": [],
+            "provisioning_state": "Succeeded",
+            "private_endpoint_network_policies": "Enabled",
+            "private_link_service_network_policies": "Enabled",
+            "default_outbound_access": false,
+            "subscription_id": "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "resource_group_name": "rg-hub-westeurope",
+            "virtual_network_name": "vnet-hub-westeurope"
+        },
+        {
+            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope/subnets/dns-resolver",
+            "name": "dns-resolver",
+            "etag": "W/\"4da2b9cb-6fa0-4c82-ad55-82fff0c4a340\"",
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "address_prefix": "10.0.0.160/28",
+            "network_security_group": {
+                "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-westeurope-dns-resolver-nsg-westeurope"
+            },
+            "service_endpoints": [],
+            "ip_configurations": [
+                {
+                    "id": "/subscriptions/c065de23-cfc3-44c0-ad16-126f4ec47f36/resourceGroups/rg-prod-westeurope-main-endpoints/providers/Microsoft.Network/loadBalancers/lbi-prod-westeurope-main-ept-430d7895ecee4741bfd1459462fee3d5/frontendIPConfigurations/frontend-ipconfig"
+                }
+            ],
+            "service_association_links": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope/subnets/dns-resolver/serviceAssociationLinks/dnsResolverLink",
+                    "name": "dnsResolverLink",
+                    "etag": "W/\"4da2b9cb-6fa0-4c82-ad55-82fff0c4a340\"",
+                    "type": "Microsoft.Network/virtualNetworks/subnets/serviceAssociationLinks",
+                    "linked_resource_type": "Microsoft.Network/dnsResolvers",
+                    "link": "/InboundEndpoint/430d7895-ecee-4741-bfd1-459462fee3d5",
+                    "provisioning_state": "Succeeded",
+                    "allow_delete": false,
+                    "locations": []
+                }
+            ],
+            "delegations": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope/subnets/dns-resolver/delegations/Microsoft.Network.dnsResolvers",
+                    "name": "Microsoft.Network.dnsResolvers",
+                    "etag": "W/\"4da2b9cb-6fa0-4c82-ad55-82fff0c4a340\"",
+                    "type": "Microsoft.Network/virtualNetworks/subnets/delegations",
+                    "service_name": "Microsoft.Network/dnsResolvers",
+                    "actions": [
+                        "Microsoft.Network/virtualNetworks/subnets/join/action"
+                    ],
+                    "provisioning_state": "Succeeded"
+                }
+            ],
+            "provisioning_state": "Succeeded",
+            "private_endpoint_network_policies": "Enabled",
+            "private_link_service_network_policies": "Enabled",
+            "default_outbound_access": false,
+            "subscription_id": "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "resource_group_name": "rg-hub-westeurope",
+            "virtual_network_name": "vnet-hub-westeurope"
+        },
+        {
+            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope/subnets/GatewaySubnet",
+            "name": "GatewaySubnet",
+            "etag": "W/\"4da2b9cb-6fa0-4c82-ad55-82fff0c4a340\"",
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "address_prefix": "10.0.0.128/27",
+            "service_endpoints": [],
+            "ip_configurations": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-WESTEUROPE/providers/Microsoft.Network/virtualNetworkGateways/VGW-HUB-ER-WESTEUROPE/ipConfigurations/VNETGATEWAYCONFIGDEFAULT"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-WESTEUROPE/providers/Microsoft.Network/virtualNetworkGateways/VGW-HUB-VPN-WESTEUROPE/ipConfigurations/VNETGATEWAYCONFIGACTIVE_ACTIVE_1"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-WESTEUROPE/providers/Microsoft.Network/virtualNetworkGateways/VGW-HUB-VPN-WESTEUROPE/ipConfigurations/VNETGATEWAYCONFIGACTIVE_ACTIVE_2"
+                }
+            ],
+            "delegations": [],
+            "provisioning_state": "Succeeded",
+            "private_endpoint_network_policies": "Enabled",
+            "private_link_service_network_policies": "Enabled",
+            "default_outbound_access": false,
+            "subscription_id": "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "resource_group_name": "rg-hub-westeurope",
+            "virtual_network_name": "vnet-hub-westeurope"
+        },
+        {
+            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope/subnets/AzureBastionSubnet",
+            "name": "AzureBastionSubnet",
+            "etag": "W/\"4da2b9cb-6fa0-4c82-ad55-82fff0c4a340\"",
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "address_prefix": "10.0.0.64/26",
+            "network_security_group": {
+                "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-westeurope-AzureBastionSubnet-nsg-westeurope"
+            },
+            "service_endpoints": [],
+            "ip_configurations": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-WESTEUROPE/providers/Microsoft.Network/bastionHosts/BAS-HUB-WESTEUROPE/bastionHostIpConfigurations/BASTION-IP-CONFIG"
+                }
+            ],
+            "delegations": [],
+            "provisioning_state": "Succeeded",
+            "private_endpoint_network_policies": "Enabled",
+            "private_link_service_network_policies": "Enabled",
+            "default_outbound_access": false,
+            "subscription_id": "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "resource_group_name": "rg-hub-westeurope",
+            "virtual_network_name": "vnet-hub-westeurope"
+        },
+        {
+            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope/subnets/AzureFirewallSubnet",
+            "name": "AzureFirewallSubnet",
+            "etag": "W/\"4da2b9cb-6fa0-4c82-ad55-82fff0c4a340\"",
+            "type": "Microsoft.Network/virtualNetworks/subnets",
+            "address_prefix": "10.0.0.0/26",
+            "route_table": {
+                "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/routeTables/rt-hub-fw-westeurope"
+            },
+            "service_endpoints": [],
+            "ip_configurations": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-WESTEUROPE/providers/Microsoft.Network/azureFirewalls/FW-HUB-WESTEUROPE/azureFirewallIpConfigurations/DEFAULT"
+                }
+            ],
+            "delegations": [],
+            "provisioning_state": "Succeeded",
+            "private_endpoint_network_policies": "Enabled",
+            "private_link_service_network_policies": "Enabled",
+            "default_outbound_access": false,
+            "subscription_id": "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "resource_group_name": "rg-hub-westeurope",
+            "virtual_network_name": "vnet-hub-westeurope"
+        }
+    ],
+    "route_tables": [
+        {
+            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/routeTables/rt-hub-fw-northeurope",
+            "name": "rt-hub-fw-northeurope",
+            "type": "Microsoft.Network/routeTables",
+            "location": "northeurope",
+            "tags": {
+                "deployed_by": "terraform",
+                "source": "Azure Landing Zones Accelerator"
+            },
+            "etag": "W/\"c3394927-ed04-41ae-bf9b-284107a22603\"",
+            "routes": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/routeTables/rt-hub-fw-northeurope/routes/internet",
+                    "name": "internet",
+                    "etag": "W/\"c3394927-ed04-41ae-bf9b-284107a22603\"",
+                    "type": "Microsoft.Network/routeTables/routes",
+                    "address_prefix": "0.0.0.0/0",
+                    "next_hop_type": "Internet",
+                    "provisioning_state": "Succeeded",
+                    "has_bgp_override": false
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/routeTables/rt-hub-fw-northeurope/routes/secondary-primary-10.0.0.0-16",
+                    "name": "secondary-primary-10.0.0.0-16",
+                    "etag": "W/\"c3394927-ed04-41ae-bf9b-284107a22603\"",
+                    "type": "Microsoft.Network/routeTables/routes",
+                    "address_prefix": "10.0.0.0/16",
+                    "next_hop_type": "VirtualAppliance",
+                    "next_hop_ip_address": "10.0.0.4",
+                    "provisioning_state": "Succeeded",
+                    "has_bgp_override": false
+                }
+            ],
+            "subnets": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-northeurope/subnets/AzureFirewallSubnet"
+                }
+            ],
+            "disable_bgp_route_propagation": false,
+            "provisioning_state": "Succeeded",
+            "resource_guid": "9283ed3c-9d07-47e3-bede-2c0df3f41e4d",
+            "subscription_id": "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "resource_group_name": "rg-hub-northeurope"
+        },
+        {
+            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/routeTables/rt-hub-fw-westeurope",
+            "name": "rt-hub-fw-westeurope",
+            "type": "Microsoft.Network/routeTables",
+            "location": "westeurope",
+            "tags": {
+                "deployed_by": "terraform",
+                "source": "Azure Landing Zones Accelerator"
+            },
+            "etag": "W/\"3f54c137-5842-47cd-b4cd-5a0b11bef2e5\"",
+            "routes": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/routeTables/rt-hub-fw-westeurope/routes/internet",
+                    "name": "internet",
+                    "etag": "W/\"3f54c137-5842-47cd-b4cd-5a0b11bef2e5\"",
+                    "type": "Microsoft.Network/routeTables/routes",
+                    "address_prefix": "0.0.0.0/0",
+                    "next_hop_type": "Internet",
+                    "provisioning_state": "Succeeded",
+                    "has_bgp_override": false
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/routeTables/rt-hub-fw-westeurope/routes/primary-secondary-10.1.0.0-16",
+                    "name": "primary-secondary-10.1.0.0-16",
+                    "etag": "W/\"3f54c137-5842-47cd-b4cd-5a0b11bef2e5\"",
+                    "type": "Microsoft.Network/routeTables/routes",
+                    "address_prefix": "10.1.0.0/16",
+                    "next_hop_type": "VirtualAppliance",
+                    "next_hop_ip_address": "10.1.0.4",
+                    "provisioning_state": "Succeeded",
+                    "has_bgp_override": false
+                }
+            ],
+            "subnets": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope/subnets/AzureFirewallSubnet"
+                }
+            ],
+            "disable_bgp_route_propagation": false,
+            "provisioning_state": "Succeeded",
+            "resource_guid": "100ff523-98a5-4b61-a48f-42ecad2f0d35",
+            "subscription_id": "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "resource_group_name": "rg-hub-westeurope"
+        }
+    ],
+    "nsgs": [
+        {
+            "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/networkSecurityGroups/nsg-avd-test",
+            "name": "nsg-avd-test",
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "location": "westeurope",
+            "tags": {},
+            "etag": "W/\"10464748-9be9-4461-94fd-03abbf66f088\"",
+            "security_rules": [],
+            "default_security_rules": [
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/networkSecurityGroups/nsg-avd-test/defaultSecurityRules/AllowVnetInBound",
+                    "name": "AllowVnetInBound",
+                    "etag": "W/\"10464748-9be9-4461-94fd-03abbf66f088\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Allow inbound traffic from all VMs in VNET",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "VirtualNetwork",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "VirtualNetwork",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 65000,
+                    "direction": "Inbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/networkSecurityGroups/nsg-avd-test/defaultSecurityRules/AllowAzureLoadBalancerInBound",
+                    "name": "AllowAzureLoadBalancerInBound",
+                    "etag": "W/\"10464748-9be9-4461-94fd-03abbf66f088\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Allow inbound traffic from azure load balancer",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "AzureLoadBalancer",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 65001,
+                    "direction": "Inbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/networkSecurityGroups/nsg-avd-test/defaultSecurityRules/DenyAllInBound",
+                    "name": "DenyAllInBound",
+                    "etag": "W/\"10464748-9be9-4461-94fd-03abbf66f088\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Deny all inbound traffic",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Deny",
+                    "priority": 65500,
+                    "direction": "Inbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/networkSecurityGroups/nsg-avd-test/defaultSecurityRules/AllowVnetOutBound",
+                    "name": "AllowVnetOutBound",
+                    "etag": "W/\"10464748-9be9-4461-94fd-03abbf66f088\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Allow outbound traffic from all VMs to all VMs in VNET",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "VirtualNetwork",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "VirtualNetwork",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 65000,
+                    "direction": "Outbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/networkSecurityGroups/nsg-avd-test/defaultSecurityRules/AllowInternetOutBound",
+                    "name": "AllowInternetOutBound",
+                    "etag": "W/\"10464748-9be9-4461-94fd-03abbf66f088\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Allow outbound traffic from all VMs to Internet",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "Internet",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 65001,
+                    "direction": "Outbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/networkSecurityGroups/nsg-avd-test/defaultSecurityRules/DenyAllOutBound",
+                    "name": "DenyAllOutBound",
+                    "etag": "W/\"10464748-9be9-4461-94fd-03abbf66f088\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Deny all outbound traffic",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Deny",
+                    "priority": 65500,
+                    "direction": "Outbound",
+                    "provisioning_state": "Succeeded"
+                }
+            ],
+            "network_interfaces": [
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/networkInterfaces/vm-avd-test-0-nic"
+                },
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/networkInterfaces/vm-test-01-0-nic"
+                },
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/networkInterfaces/vm-test-0-nic"
+                }
+            ],
+            "subnets": [
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/virtualNetworks/vnet-avd-test/subnets/snet-avd-test"
+                },
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-spoke-avd/providers/Microsoft.Network/virtualNetworks/vnet-avd-spoke-01/subnets/snet-avd-spoke-01"
+                }
+            ],
+            "resource_guid": "3680e483-a49e-4ea1-ba96-693e068c7f1e",
+            "provisioning_state": "Succeeded",
+            "subscription_id": "1a067293-8cab-4c81-a8a7-3b5508b6e2b4",
+            "resource_group_name": "rg-avd-test"
+        },
+        {
+            "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/networkSecurityGroups/nsg-avd-test",
+            "name": "nsg-avd-test",
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "location": "westeurope",
+            "tags": {},
+            "etag": "W/\"10464748-9be9-4461-94fd-03abbf66f088\"",
+            "security_rules": [],
+            "default_security_rules": [
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/networkSecurityGroups/nsg-avd-test/defaultSecurityRules/AllowVnetInBound",
+                    "name": "AllowVnetInBound",
+                    "etag": "W/\"10464748-9be9-4461-94fd-03abbf66f088\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Allow inbound traffic from all VMs in VNET",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "VirtualNetwork",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "VirtualNetwork",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 65000,
+                    "direction": "Inbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/networkSecurityGroups/nsg-avd-test/defaultSecurityRules/AllowAzureLoadBalancerInBound",
+                    "name": "AllowAzureLoadBalancerInBound",
+                    "etag": "W/\"10464748-9be9-4461-94fd-03abbf66f088\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Allow inbound traffic from azure load balancer",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "AzureLoadBalancer",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 65001,
+                    "direction": "Inbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/networkSecurityGroups/nsg-avd-test/defaultSecurityRules/DenyAllInBound",
+                    "name": "DenyAllInBound",
+                    "etag": "W/\"10464748-9be9-4461-94fd-03abbf66f088\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Deny all inbound traffic",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Deny",
+                    "priority": 65500,
+                    "direction": "Inbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/networkSecurityGroups/nsg-avd-test/defaultSecurityRules/AllowVnetOutBound",
+                    "name": "AllowVnetOutBound",
+                    "etag": "W/\"10464748-9be9-4461-94fd-03abbf66f088\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Allow outbound traffic from all VMs to all VMs in VNET",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "VirtualNetwork",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "VirtualNetwork",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 65000,
+                    "direction": "Outbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/networkSecurityGroups/nsg-avd-test/defaultSecurityRules/AllowInternetOutBound",
+                    "name": "AllowInternetOutBound",
+                    "etag": "W/\"10464748-9be9-4461-94fd-03abbf66f088\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Allow outbound traffic from all VMs to Internet",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "Internet",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 65001,
+                    "direction": "Outbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/networkSecurityGroups/nsg-avd-test/defaultSecurityRules/DenyAllOutBound",
+                    "name": "DenyAllOutBound",
+                    "etag": "W/\"10464748-9be9-4461-94fd-03abbf66f088\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Deny all outbound traffic",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Deny",
+                    "priority": 65500,
+                    "direction": "Outbound",
+                    "provisioning_state": "Succeeded"
+                }
+            ],
+            "network_interfaces": [
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/networkInterfaces/vm-avd-test-0-nic"
+                },
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/networkInterfaces/vm-test-01-0-nic"
+                },
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/networkInterfaces/vm-test-0-nic"
+                }
+            ],
+            "subnets": [
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-avd-test/providers/Microsoft.Network/virtualNetworks/vnet-avd-test/subnets/snet-avd-test"
+                },
+                {
+                    "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-spoke-avd/providers/Microsoft.Network/virtualNetworks/vnet-avd-spoke-01/subnets/snet-avd-spoke-01"
+                }
+            ],
+            "resource_guid": "3680e483-a49e-4ea1-ba96-693e068c7f1e",
+            "provisioning_state": "Succeeded",
+            "subscription_id": "1a067293-8cab-4c81-a8a7-3b5508b6e2b4",
+            "resource_group_name": "rg-avd-test"
+        },
+        {
+            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-northeurope-dns-resolver-nsg-northeurope",
+            "name": "vnet-hub-northeurope-dns-resolver-nsg-northeurope",
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "location": "northeurope",
+            "tags": {
+                "source": "Azure Landing Zones Accelerator",
+                "deployed_by": "terraform"
+            },
+            "etag": "W/\"13af1ef4-94b1-4533-9219-e5a28e374f67\"",
+            "security_rules": [],
+            "default_security_rules": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-northeurope-dns-resolver-nsg-northeurope/defaultSecurityRules/AllowVnetInBound",
+                    "name": "AllowVnetInBound",
+                    "etag": "W/\"13af1ef4-94b1-4533-9219-e5a28e374f67\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Allow inbound traffic from all VMs in VNET",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "VirtualNetwork",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "VirtualNetwork",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 65000,
+                    "direction": "Inbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-northeurope-dns-resolver-nsg-northeurope/defaultSecurityRules/AllowAzureLoadBalancerInBound",
+                    "name": "AllowAzureLoadBalancerInBound",
+                    "etag": "W/\"13af1ef4-94b1-4533-9219-e5a28e374f67\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Allow inbound traffic from azure load balancer",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "AzureLoadBalancer",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 65001,
+                    "direction": "Inbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-northeurope-dns-resolver-nsg-northeurope/defaultSecurityRules/DenyAllInBound",
+                    "name": "DenyAllInBound",
+                    "etag": "W/\"13af1ef4-94b1-4533-9219-e5a28e374f67\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Deny all inbound traffic",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Deny",
+                    "priority": 65500,
+                    "direction": "Inbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-northeurope-dns-resolver-nsg-northeurope/defaultSecurityRules/AllowVnetOutBound",
+                    "name": "AllowVnetOutBound",
+                    "etag": "W/\"13af1ef4-94b1-4533-9219-e5a28e374f67\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Allow outbound traffic from all VMs to all VMs in VNET",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "VirtualNetwork",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "VirtualNetwork",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 65000,
+                    "direction": "Outbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-northeurope-dns-resolver-nsg-northeurope/defaultSecurityRules/AllowInternetOutBound",
+                    "name": "AllowInternetOutBound",
+                    "etag": "W/\"13af1ef4-94b1-4533-9219-e5a28e374f67\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Allow outbound traffic from all VMs to Internet",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "Internet",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 65001,
+                    "direction": "Outbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-northeurope-dns-resolver-nsg-northeurope/defaultSecurityRules/DenyAllOutBound",
+                    "name": "DenyAllOutBound",
+                    "etag": "W/\"13af1ef4-94b1-4533-9219-e5a28e374f67\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Deny all outbound traffic",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Deny",
+                    "priority": 65500,
+                    "direction": "Outbound",
+                    "provisioning_state": "Succeeded"
+                }
+            ],
+            "subnets": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-NORTHEUROPE/providers/Microsoft.Network/virtualNetworks/VNET-HUB-NORTHEUROPE/subnets/DNS-RESOLVER"
+                }
+            ],
+            "resource_guid": "d866c74b-0b8c-4538-b8fe-7c2e458d90d6",
+            "provisioning_state": "Succeeded",
+            "subscription_id": "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "resource_group_name": "rg-hub-northeurope"
+        },
+        {
+            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-northeurope-AzureBastionSubnet-nsg-northeurope",
+            "name": "vnet-hub-northeurope-AzureBastionSubnet-nsg-northeurope",
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "location": "northeurope",
+            "tags": {
+                "source": "Azure Landing Zones Accelerator",
+                "deployed_by": "terraform"
+            },
+            "etag": "W/\"98418a14-47be-49c1-bf99-6b213976658e\"",
+            "security_rules": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-northeurope-AzureBastionSubnet-nsg-northeurope/securityRules/AllowGatewayManager",
+                    "name": "AllowGatewayManager",
+                    "etag": "W/\"98418a14-47be-49c1-bf99-6b213976658e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                    "description": "Allow GatewayManager",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "443",
+                    "source_address_prefix": "GatewayManager",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 2702,
+                    "direction": "Inbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-northeurope-AzureBastionSubnet-nsg-northeurope/securityRules/AllowHttpsInBound",
+                    "name": "AllowHttpsInBound",
+                    "etag": "W/\"98418a14-47be-49c1-bf99-6b213976658e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                    "description": "Allow HTTPs",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "443",
+                    "source_address_prefix": "Internet",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 2703,
+                    "direction": "Inbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-northeurope-AzureBastionSubnet-nsg-northeurope/securityRules/AllowSshRdpOutbound",
+                    "name": "AllowSshRdpOutbound",
+                    "etag": "W/\"98418a14-47be-49c1-bf99-6b213976658e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "VirtualNetwork",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [
+                        "22",
+                        "3389"
+                    ],
+                    "access": "Allow",
+                    "priority": 100,
+                    "direction": "Outbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-northeurope-AzureBastionSubnet-nsg-northeurope/securityRules/AllowAzureCloudOutbound",
+                    "name": "AllowAzureCloudOutbound",
+                    "etag": "W/\"98418a14-47be-49c1-bf99-6b213976658e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                    "protocol": "TCP",
+                    "source_port_range": "*",
+                    "destination_port_range": "443",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "AzureCloud",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 110,
+                    "direction": "Outbound",
+                    "provisioning_state": "Succeeded"
+                }
+            ],
+            "default_security_rules": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-northeurope-AzureBastionSubnet-nsg-northeurope/defaultSecurityRules/AllowVnetInBound",
+                    "name": "AllowVnetInBound",
+                    "etag": "W/\"98418a14-47be-49c1-bf99-6b213976658e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Allow inbound traffic from all VMs in VNET",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "VirtualNetwork",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "VirtualNetwork",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 65000,
+                    "direction": "Inbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-northeurope-AzureBastionSubnet-nsg-northeurope/defaultSecurityRules/AllowAzureLoadBalancerInBound",
+                    "name": "AllowAzureLoadBalancerInBound",
+                    "etag": "W/\"98418a14-47be-49c1-bf99-6b213976658e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Allow inbound traffic from azure load balancer",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "AzureLoadBalancer",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 65001,
+                    "direction": "Inbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-northeurope-AzureBastionSubnet-nsg-northeurope/defaultSecurityRules/DenyAllInBound",
+                    "name": "DenyAllInBound",
+                    "etag": "W/\"98418a14-47be-49c1-bf99-6b213976658e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Deny all inbound traffic",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Deny",
+                    "priority": 65500,
+                    "direction": "Inbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-northeurope-AzureBastionSubnet-nsg-northeurope/defaultSecurityRules/AllowVnetOutBound",
+                    "name": "AllowVnetOutBound",
+                    "etag": "W/\"98418a14-47be-49c1-bf99-6b213976658e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Allow outbound traffic from all VMs to all VMs in VNET",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "VirtualNetwork",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "VirtualNetwork",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 65000,
+                    "direction": "Outbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-northeurope-AzureBastionSubnet-nsg-northeurope/defaultSecurityRules/AllowInternetOutBound",
+                    "name": "AllowInternetOutBound",
+                    "etag": "W/\"98418a14-47be-49c1-bf99-6b213976658e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Allow outbound traffic from all VMs to Internet",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "Internet",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 65001,
+                    "direction": "Outbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-northeurope-AzureBastionSubnet-nsg-northeurope/defaultSecurityRules/DenyAllOutBound",
+                    "name": "DenyAllOutBound",
+                    "etag": "W/\"98418a14-47be-49c1-bf99-6b213976658e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Deny all outbound traffic",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Deny",
+                    "priority": 65500,
+                    "direction": "Outbound",
+                    "provisioning_state": "Succeeded"
+                }
+            ],
+            "subnets": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/RG-HUB-NORTHEUROPE/providers/Microsoft.Network/virtualNetworks/VNET-HUB-NORTHEUROPE/subnets/AZUREBASTIONSUBNET"
+                }
+            ],
+            "resource_guid": "0501d3f9-c84d-42b3-88e0-48fb02d34fc8",
+            "provisioning_state": "Succeeded",
+            "subscription_id": "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "resource_group_name": "rg-hub-northeurope"
+        },
+        {
+            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-westeurope-dns-resolver-nsg-westeurope",
+            "name": "vnet-hub-westeurope-dns-resolver-nsg-westeurope",
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "location": "westeurope",
+            "tags": {
+                "deployed_by": "terraform",
+                "source": "Azure Landing Zones Accelerator"
+            },
+            "etag": "W/\"8d5faa7b-056c-4bc5-aa97-66812cbf529e\"",
+            "security_rules": [],
+            "default_security_rules": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-westeurope-dns-resolver-nsg-westeurope/defaultSecurityRules/AllowVnetInBound",
+                    "name": "AllowVnetInBound",
+                    "etag": "W/\"8d5faa7b-056c-4bc5-aa97-66812cbf529e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Allow inbound traffic from all VMs in VNET",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "VirtualNetwork",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "VirtualNetwork",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 65000,
+                    "direction": "Inbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-westeurope-dns-resolver-nsg-westeurope/defaultSecurityRules/AllowAzureLoadBalancerInBound",
+                    "name": "AllowAzureLoadBalancerInBound",
+                    "etag": "W/\"8d5faa7b-056c-4bc5-aa97-66812cbf529e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Allow inbound traffic from azure load balancer",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "AzureLoadBalancer",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 65001,
+                    "direction": "Inbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-westeurope-dns-resolver-nsg-westeurope/defaultSecurityRules/DenyAllInBound",
+                    "name": "DenyAllInBound",
+                    "etag": "W/\"8d5faa7b-056c-4bc5-aa97-66812cbf529e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Deny all inbound traffic",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Deny",
+                    "priority": 65500,
+                    "direction": "Inbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-westeurope-dns-resolver-nsg-westeurope/defaultSecurityRules/AllowVnetOutBound",
+                    "name": "AllowVnetOutBound",
+                    "etag": "W/\"8d5faa7b-056c-4bc5-aa97-66812cbf529e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Allow outbound traffic from all VMs to all VMs in VNET",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "VirtualNetwork",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "VirtualNetwork",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 65000,
+                    "direction": "Outbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-westeurope-dns-resolver-nsg-westeurope/defaultSecurityRules/AllowInternetOutBound",
+                    "name": "AllowInternetOutBound",
+                    "etag": "W/\"8d5faa7b-056c-4bc5-aa97-66812cbf529e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Allow outbound traffic from all VMs to Internet",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "Internet",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 65001,
+                    "direction": "Outbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-westeurope-dns-resolver-nsg-westeurope/defaultSecurityRules/DenyAllOutBound",
+                    "name": "DenyAllOutBound",
+                    "etag": "W/\"8d5faa7b-056c-4bc5-aa97-66812cbf529e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Deny all outbound traffic",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Deny",
+                    "priority": 65500,
+                    "direction": "Outbound",
+                    "provisioning_state": "Succeeded"
+                }
+            ],
+            "subnets": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope/subnets/dns-resolver"
+                }
+            ],
+            "resource_guid": "2c160418-a858-426f-9f78-21ce58a4be9c",
+            "provisioning_state": "Succeeded",
+            "subscription_id": "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "resource_group_name": "rg-hub-westeurope"
+        },
+        {
+            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-westeurope-AzureBastionSubnet-nsg-westeurope",
+            "name": "vnet-hub-westeurope-AzureBastionSubnet-nsg-westeurope",
+            "type": "Microsoft.Network/networkSecurityGroups",
+            "location": "westeurope",
+            "tags": {
+                "source": "Azure Landing Zones Accelerator",
+                "deployed_by": "terraform"
+            },
+            "etag": "W/\"f8b7ecf6-495b-4a5a-9d21-3743b90b3b2e\"",
+            "security_rules": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-westeurope-AzureBastionSubnet-nsg-westeurope/securityRules/AllowGatewayManager",
+                    "name": "AllowGatewayManager",
+                    "etag": "W/\"f8b7ecf6-495b-4a5a-9d21-3743b90b3b2e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                    "description": "Allow GatewayManager",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "443",
+                    "source_address_prefix": "GatewayManager",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 2702,
+                    "direction": "Inbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-westeurope-AzureBastionSubnet-nsg-westeurope/securityRules/AllowHttpsInBound",
+                    "name": "AllowHttpsInBound",
+                    "etag": "W/\"f8b7ecf6-495b-4a5a-9d21-3743b90b3b2e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                    "description": "Allow HTTPs",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "443",
+                    "source_address_prefix": "Internet",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 2703,
+                    "direction": "Inbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-westeurope-AzureBastionSubnet-nsg-westeurope/securityRules/AllowSshRdpOutbound",
+                    "name": "AllowSshRdpOutbound",
+                    "etag": "W/\"f8b7ecf6-495b-4a5a-9d21-3743b90b3b2e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "VirtualNetwork",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [
+                        "22",
+                        "3389"
+                    ],
+                    "access": "Allow",
+                    "priority": 100,
+                    "direction": "Outbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-westeurope-AzureBastionSubnet-nsg-westeurope/securityRules/AllowAzureCloudOutbound",
+                    "name": "AllowAzureCloudOutbound",
+                    "etag": "W/\"f8b7ecf6-495b-4a5a-9d21-3743b90b3b2e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/securityRules",
+                    "protocol": "TCP",
+                    "source_port_range": "*",
+                    "destination_port_range": "443",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "AzureCloud",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 110,
+                    "direction": "Outbound",
+                    "provisioning_state": "Succeeded"
+                }
+            ],
+            "default_security_rules": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-westeurope-AzureBastionSubnet-nsg-westeurope/defaultSecurityRules/AllowVnetInBound",
+                    "name": "AllowVnetInBound",
+                    "etag": "W/\"f8b7ecf6-495b-4a5a-9d21-3743b90b3b2e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Allow inbound traffic from all VMs in VNET",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "VirtualNetwork",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "VirtualNetwork",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 65000,
+                    "direction": "Inbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-westeurope-AzureBastionSubnet-nsg-westeurope/defaultSecurityRules/AllowAzureLoadBalancerInBound",
+                    "name": "AllowAzureLoadBalancerInBound",
+                    "etag": "W/\"f8b7ecf6-495b-4a5a-9d21-3743b90b3b2e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Allow inbound traffic from azure load balancer",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "AzureLoadBalancer",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 65001,
+                    "direction": "Inbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-westeurope-AzureBastionSubnet-nsg-westeurope/defaultSecurityRules/DenyAllInBound",
+                    "name": "DenyAllInBound",
+                    "etag": "W/\"f8b7ecf6-495b-4a5a-9d21-3743b90b3b2e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Deny all inbound traffic",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Deny",
+                    "priority": 65500,
+                    "direction": "Inbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-westeurope-AzureBastionSubnet-nsg-westeurope/defaultSecurityRules/AllowVnetOutBound",
+                    "name": "AllowVnetOutBound",
+                    "etag": "W/\"f8b7ecf6-495b-4a5a-9d21-3743b90b3b2e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Allow outbound traffic from all VMs to all VMs in VNET",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "VirtualNetwork",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "VirtualNetwork",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 65000,
+                    "direction": "Outbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-westeurope-AzureBastionSubnet-nsg-westeurope/defaultSecurityRules/AllowInternetOutBound",
+                    "name": "AllowInternetOutBound",
+                    "etag": "W/\"f8b7ecf6-495b-4a5a-9d21-3743b90b3b2e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Allow outbound traffic from all VMs to Internet",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "Internet",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Allow",
+                    "priority": 65001,
+                    "direction": "Outbound",
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/networkSecurityGroups/vnet-hub-westeurope-AzureBastionSubnet-nsg-westeurope/defaultSecurityRules/DenyAllOutBound",
+                    "name": "DenyAllOutBound",
+                    "etag": "W/\"f8b7ecf6-495b-4a5a-9d21-3743b90b3b2e\"",
+                    "type": "Microsoft.Network/networkSecurityGroups/defaultSecurityRules",
+                    "description": "Deny all outbound traffic",
+                    "protocol": "*",
+                    "source_port_range": "*",
+                    "destination_port_range": "*",
+                    "source_address_prefix": "*",
+                    "source_address_prefixes": [],
+                    "destination_address_prefix": "*",
+                    "destination_address_prefixes": [],
+                    "source_port_ranges": [],
+                    "destination_port_ranges": [],
+                    "access": "Deny",
+                    "priority": 65500,
+                    "direction": "Outbound",
+                    "provisioning_state": "Succeeded"
+                }
+            ],
+            "subnets": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope/subnets/AzureBastionSubnet"
+                }
+            ],
+            "resource_guid": "777c3840-145e-481c-8648-d529333f35ff",
+            "provisioning_state": "Succeeded",
+            "subscription_id": "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "resource_group_name": "rg-hub-westeurope"
+        }
+    ],
+    "peerings": [
+        {
+            "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-spoke-avd/providers/Microsoft.Network/virtualNetworks/vnet-avd-spoke-01/virtualNetworkPeerings/peering-hub-westeurope-to-hub",
+            "name": "peering-hub-westeurope-to-hub",
+            "etag": "W/\"fc8307f6-5f0a-4107-a2b7-973769701899\"",
+            "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+            "allow_virtual_network_access": true,
+            "allow_forwarded_traffic": true,
+            "allow_gateway_transit": false,
+            "use_remote_gateways": true,
+            "remote_virtual_network": {
+                "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope"
+            },
+            "remote_address_space": {
+                "address_prefixes": [
+                    "10.0.0.0/22"
+                ]
+            },
+            "remote_virtual_network_address_space": {
+                "address_prefixes": [
+                    "10.0.0.0/22"
+                ]
+            },
+            "peering_state": "Connected",
+            "peering_sync_level": "FullyInSync",
+            "provisioning_state": "Succeeded",
+            "do_not_verify_remote_gateways": false,
+            "resource_guid": "07c4d6a5-9a9e-055e-2075-849d51d2348d",
+            "peer_complete_vnets": true,
+            "subscription_id": "1a067293-8cab-4c81-a8a7-3b5508b6e2b4",
+            "resource_group_name": "rg-spoke-avd",
+            "virtual_network_name": "vnet-avd-spoke-01"
+        },
+        {
+            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-northeurope/virtualNetworkPeerings/vnet-hub-northeurope-vnet-hub-westeurope",
+            "name": "vnet-hub-northeurope-vnet-hub-westeurope",
+            "etag": "W/\"86509fdf-1146-4594-8e07-bb1930c4c071\"",
+            "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+            "allow_virtual_network_access": true,
+            "allow_forwarded_traffic": true,
+            "allow_gateway_transit": true,
+            "use_remote_gateways": false,
+            "remote_virtual_network": {
+                "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope"
+            },
+            "remote_address_space": {
+                "address_prefixes": [
+                    "10.0.0.0/22"
+                ]
+            },
+            "remote_virtual_network_address_space": {
+                "address_prefixes": [
+                    "10.0.0.0/22"
+                ]
+            },
+            "peering_state": "Connected",
+            "peering_sync_level": "FullyInSync",
+            "provisioning_state": "Succeeded",
+            "do_not_verify_remote_gateways": false,
+            "resource_guid": "39bca500-daf3-003b-178b-ee1b581267e6",
+            "peer_complete_vnets": true,
+            "subscription_id": "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "resource_group_name": "rg-hub-northeurope",
+            "virtual_network_name": "vnet-hub-northeurope"
+        },
+        {
+            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope/virtualNetworkPeerings/vnet-hub-westeurope-vnet-hub-northeurope",
+            "name": "vnet-hub-westeurope-vnet-hub-northeurope",
+            "etag": "W/\"4da2b9cb-6fa0-4c82-ad55-82fff0c4a340\"",
+            "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+            "allow_virtual_network_access": true,
+            "allow_forwarded_traffic": true,
+            "allow_gateway_transit": true,
+            "use_remote_gateways": false,
+            "remote_virtual_network": {
+                "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-northeurope"
+            },
+            "remote_address_space": {
+                "address_prefixes": [
+                    "10.1.0.0/22"
+                ]
+            },
+            "remote_virtual_network_address_space": {
+                "address_prefixes": [
+                    "10.1.0.0/22"
+                ]
+            },
+            "peering_state": "Connected",
+            "peering_sync_level": "FullyInSync",
+            "provisioning_state": "Succeeded",
+            "do_not_verify_remote_gateways": false,
+            "resource_guid": "39bca500-daf3-003b-178b-ee1b581267e6",
+            "peer_complete_vnets": true,
+            "subscription_id": "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "resource_group_name": "rg-hub-westeurope",
+            "virtual_network_name": "vnet-hub-westeurope"
+        },
+        {
+            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope/virtualNetworkPeerings/peering-spoke-to-hub-westeurope",
+            "name": "peering-spoke-to-hub-westeurope",
+            "etag": "W/\"4da2b9cb-6fa0-4c82-ad55-82fff0c4a340\"",
+            "type": "Microsoft.Network/virtualNetworks/virtualNetworkPeerings",
+            "allow_virtual_network_access": true,
+            "allow_forwarded_traffic": false,
+            "allow_gateway_transit": true,
+            "use_remote_gateways": false,
+            "remote_virtual_network": {
+                "id": "/subscriptions/1a067293-8cab-4c81-a8a7-3b5508b6e2b4/resourceGroups/rg-spoke-avd/providers/Microsoft.Network/virtualNetworks/vnet-avd-spoke-01"
+            },
+            "remote_address_space": {
+                "address_prefixes": [
+                    "192.168.0.0/14"
+                ]
+            },
+            "remote_virtual_network_address_space": {
+                "address_prefixes": [
+                    "192.168.0.0/14"
+                ]
+            },
+            "remote_virtual_network_encryption": {
+                "enabled": false,
+                "enforcement": "AllowUnencrypted"
+            },
+            "peering_state": "Connected",
+            "peering_sync_level": "FullyInSync",
+            "provisioning_state": "Succeeded",
+            "do_not_verify_remote_gateways": false,
+            "resource_guid": "07c4d6a5-9a9e-055e-2075-849d51d2348d",
+            "peer_complete_vnets": true,
+            "subscription_id": "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "resource_group_name": "rg-hub-westeurope",
+            "virtual_network_name": "vnet-hub-westeurope"
+        }
+    ],
+    "vnet_gateways": [
+        {
+            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworkGateways/vgw-hub-er-northeurope",
+            "name": "vgw-hub-er-northeurope",
+            "type": "Microsoft.Network/virtualNetworkGateways",
+            "location": "northeurope",
+            "tags": {
+                "deployed_by": "terraform",
+                "source": "Azure Landing Zones Accelerator"
+            },
+            "etag": "W/\"9de7ebcd-dd7d-45c0-82c2-faa59b13725d\"",
+            "ip_configurations": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworkGateways/vgw-hub-er-northeurope/ipConfigurations/vnetGatewayConfigdefault",
+                    "name": "vnetGatewayConfigdefault",
+                    "etag": "W/\"9de7ebcd-dd7d-45c0-82c2-faa59b13725d\"",
+                    "private_ip_allocation_method": "Dynamic",
+                    "subnet": {
+                        "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-northeurope/subnets/GatewaySubnet"
+                    },
+                    "provisioning_state": "Succeeded"
+                }
+            ],
+            "gateway_type": "ExpressRoute",
+            "vpn_type": "RouteBased",
+            "vpn_gateway_generation": "None",
+            "enable_bgp": false,
+            "enable_private_ip_address": false,
+            "virtual_network_gateway_migration_status": {
+                "state": "None",
+                "phase": "None",
+                "error_message": ""
+            },
+            "active": false,
+            "enable_high_bandwidth_vpn_gateway": false,
+            "disable_ip_sec_replay_protection": false,
+            "sku": {
+                "name": "ErGw1AZ",
+                "tier": "ErGw1AZ",
+                "capacity": 2
+            },
+            "vpn_client_configuration": {
+                "vpn_client_root_certificates": [],
+                "vpn_client_revoked_certificates": [],
+                "vpn_client_protocols": [
+                    "OpenVPN",
+                    "IkeV2"
+                ],
+                "vpn_authentication_types": [],
+                "vpn_client_ipsec_policies": [],
+                "radius_servers": [],
+                "vng_client_connection_configurations": []
+            },
+            "virtual_network_gateway_policy_groups": [],
+            "resource_guid": "32b78008-682c-4e32-96d2-8cbd3741f4ae",
+            "provisioning_state": "Succeeded",
+            "nat_rules": [],
+            "enable_bgp_route_translation_for_nat": false,
+            "allow_virtual_wan_traffic": false,
+            "allow_remote_vnet_traffic": false,
+            "admin_state": "Enabled",
+            "subscription_id": "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "resource_group_name": "rg-hub-northeurope"
+        },
+        {
+            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworkGateways/vgw-hub-vpn-northeurope",
+            "name": "vgw-hub-vpn-northeurope",
+            "type": "Microsoft.Network/virtualNetworkGateways",
+            "location": "northeurope",
+            "tags": {
+                "deployed_by": "terraform",
+                "source": "Azure Landing Zones Accelerator"
+            },
+            "etag": "W/\"84be75f6-76a9-47e2-99e6-4899ed6a9d0b\"",
+            "ip_configurations": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworkGateways/vgw-hub-vpn-northeurope/ipConfigurations/vnetGatewayConfigactive_active_1",
+                    "name": "vnetGatewayConfigactive_active_1",
+                    "etag": "W/\"84be75f6-76a9-47e2-99e6-4899ed6a9d0b\"",
+                    "private_ip_allocation_method": "Dynamic",
+                    "subnet": {
+                        "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-northeurope/subnets/GatewaySubnet"
+                    },
+                    "public_ip_address": {
+                        "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/publicIPAddresses/pip-vgw-hub-vpn-northeurope-001"
+                    },
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworkGateways/vgw-hub-vpn-northeurope/ipConfigurations/vnetGatewayConfigactive_active_2",
+                    "name": "vnetGatewayConfigactive_active_2",
+                    "etag": "W/\"84be75f6-76a9-47e2-99e6-4899ed6a9d0b\"",
+                    "private_ip_allocation_method": "Dynamic",
+                    "subnet": {
+                        "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-northeurope/subnets/GatewaySubnet"
+                    },
+                    "public_ip_address": {
+                        "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/publicIPAddresses/pip-vgw-hub-vpn-northeurope-002"
+                    },
+                    "provisioning_state": "Succeeded"
+                }
+            ],
+            "gateway_type": "Vpn",
+            "vpn_type": "RouteBased",
+            "vpn_gateway_generation": "Generation1",
+            "enable_bgp": false,
+            "enable_private_ip_address": false,
+            "virtual_network_gateway_migration_status": {
+                "state": "None",
+                "phase": "None",
+                "error_message": ""
+            },
+            "active": true,
+            "enable_high_bandwidth_vpn_gateway": false,
+            "disable_ip_sec_replay_protection": false,
+            "sku": {
+                "name": "VpnGw1AZ",
+                "tier": "VpnGw1AZ",
+                "capacity": 2
+            },
+            "vpn_client_configuration": {
+                "vpn_client_root_certificates": [],
+                "vpn_client_revoked_certificates": [],
+                "vpn_client_protocols": [
+                    "OpenVPN",
+                    "IkeV2"
+                ],
+                "vpn_authentication_types": [],
+                "vpn_client_ipsec_policies": [],
+                "radius_servers": [],
+                "vng_client_connection_configurations": []
+            },
+            "virtual_network_gateway_policy_groups": [],
+            "bgp_settings": {
+                "asn": 65515,
+                "bgp_peering_address": "10.1.0.141,10.1.0.140",
+                "peer_weight": 0,
+                "bgp_peering_addresses": [
+                    {
+                        "ipconfiguration_id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworkGateways/vgw-hub-vpn-northeurope/ipConfigurations/vnetGatewayConfigactive_active_1",
+                        "default_bgp_ip_addresses": [
+                            "10.1.0.141"
+                        ],
+                        "custom_bgp_ip_addresses": [],
+                        "tunnel_ip_addresses": [
+                            "48.209.179.50"
+                        ]
+                    },
+                    {
+                        "ipconfiguration_id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-northeurope/providers/Microsoft.Network/virtualNetworkGateways/vgw-hub-vpn-northeurope/ipConfigurations/vnetGatewayConfigactive_active_2",
+                        "default_bgp_ip_addresses": [
+                            "10.1.0.140"
+                        ],
+                        "custom_bgp_ip_addresses": [],
+                        "tunnel_ip_addresses": [
+                            "68.219.128.53"
+                        ]
+                    }
+                ]
+            },
+            "resource_guid": "235063b4-52c1-49b4-a162-82fef9cc7194",
+            "provisioning_state": "Succeeded",
+            "nat_rules": [],
+            "enable_bgp_route_translation_for_nat": false,
+            "allow_virtual_wan_traffic": false,
+            "allow_remote_vnet_traffic": false,
+            "subscription_id": "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "resource_group_name": "rg-hub-northeurope"
+        },
+        {
+            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworkGateways/vgw-hub-er-westeurope",
+            "name": "vgw-hub-er-westeurope",
+            "type": "Microsoft.Network/virtualNetworkGateways",
+            "location": "westeurope",
+            "tags": {
+                "deployed_by": "terraform",
+                "source": "Azure Landing Zones Accelerator"
+            },
+            "etag": "W/\"792e6ed2-47b0-4c1f-832c-b711954e213c\"",
+            "ip_configurations": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworkGateways/vgw-hub-er-westeurope/ipConfigurations/vnetGatewayConfigdefault",
+                    "name": "vnetGatewayConfigdefault",
+                    "etag": "W/\"792e6ed2-47b0-4c1f-832c-b711954e213c\"",
+                    "private_ip_allocation_method": "Dynamic",
+                    "subnet": {
+                        "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope/subnets/GatewaySubnet"
+                    },
+                    "provisioning_state": "Succeeded"
+                }
+            ],
+            "gateway_type": "ExpressRoute",
+            "vpn_type": "RouteBased",
+            "vpn_gateway_generation": "None",
+            "enable_bgp": false,
+            "enable_private_ip_address": false,
+            "virtual_network_gateway_migration_status": {
+                "state": "None",
+                "phase": "None",
+                "error_message": ""
+            },
+            "active": false,
+            "enable_high_bandwidth_vpn_gateway": false,
+            "disable_ip_sec_replay_protection": false,
+            "sku": {
+                "name": "ErGw1AZ",
+                "tier": "ErGw1AZ",
+                "capacity": 2
+            },
+            "vpn_client_configuration": {
+                "vpn_client_root_certificates": [],
+                "vpn_client_revoked_certificates": [],
+                "vpn_client_protocols": [
+                    "OpenVPN",
+                    "IkeV2"
+                ],
+                "vpn_authentication_types": [],
+                "vpn_client_ipsec_policies": [],
+                "radius_servers": [],
+                "vng_client_connection_configurations": []
+            },
+            "virtual_network_gateway_policy_groups": [],
+            "resource_guid": "14f48173-3eb2-4974-8914-660f449deef6",
+            "provisioning_state": "Succeeded",
+            "nat_rules": [],
+            "enable_bgp_route_translation_for_nat": false,
+            "allow_virtual_wan_traffic": false,
+            "allow_remote_vnet_traffic": false,
+            "admin_state": "Enabled",
+            "subscription_id": "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "resource_group_name": "rg-hub-westeurope"
+        },
+        {
+            "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworkGateways/vgw-hub-vpn-westeurope",
+            "name": "vgw-hub-vpn-westeurope",
+            "type": "Microsoft.Network/virtualNetworkGateways",
+            "location": "westeurope",
+            "tags": {
+                "deployed_by": "terraform",
+                "source": "Azure Landing Zones Accelerator"
+            },
+            "etag": "W/\"bb5a7ac7-d585-4cdd-8a8b-da68ab536396\"",
+            "ip_configurations": [
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworkGateways/vgw-hub-vpn-westeurope/ipConfigurations/vnetGatewayConfigactive_active_1",
+                    "name": "vnetGatewayConfigactive_active_1",
+                    "etag": "W/\"bb5a7ac7-d585-4cdd-8a8b-da68ab536396\"",
+                    "private_ip_allocation_method": "Dynamic",
+                    "subnet": {
+                        "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope/subnets/GatewaySubnet"
+                    },
+                    "public_ip_address": {
+                        "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/publicIPAddresses/pip-vgw-hub-vpn-westeurope-001"
+                    },
+                    "provisioning_state": "Succeeded"
+                },
+                {
+                    "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworkGateways/vgw-hub-vpn-westeurope/ipConfigurations/vnetGatewayConfigactive_active_2",
+                    "name": "vnetGatewayConfigactive_active_2",
+                    "etag": "W/\"bb5a7ac7-d585-4cdd-8a8b-da68ab536396\"",
+                    "private_ip_allocation_method": "Dynamic",
+                    "subnet": {
+                        "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworks/vnet-hub-westeurope/subnets/GatewaySubnet"
+                    },
+                    "public_ip_address": {
+                        "id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/publicIPAddresses/pip-vgw-hub-vpn-westeurope-002"
+                    },
+                    "provisioning_state": "Succeeded"
+                }
+            ],
+            "gateway_type": "Vpn",
+            "vpn_type": "RouteBased",
+            "vpn_gateway_generation": "Generation1",
+            "enable_bgp": false,
+            "enable_private_ip_address": false,
+            "virtual_network_gateway_migration_status": {
+                "state": "None",
+                "phase": "None",
+                "error_message": ""
+            },
+            "active": true,
+            "enable_high_bandwidth_vpn_gateway": false,
+            "disable_ip_sec_replay_protection": false,
+            "sku": {
+                "name": "VpnGw1AZ",
+                "tier": "VpnGw1AZ",
+                "capacity": 2
+            },
+            "vpn_client_configuration": {
+                "vpn_client_root_certificates": [],
+                "vpn_client_revoked_certificates": [],
+                "vpn_client_protocols": [
+                    "OpenVPN",
+                    "IkeV2"
+                ],
+                "vpn_authentication_types": [],
+                "vpn_client_ipsec_policies": [],
+                "radius_servers": [],
+                "vng_client_connection_configurations": []
+            },
+            "virtual_network_gateway_policy_groups": [],
+            "bgp_settings": {
+                "asn": 65515,
+                "bgp_peering_address": "10.0.0.140,10.0.0.141",
+                "peer_weight": 0,
+                "bgp_peering_addresses": [
+                    {
+                        "ipconfiguration_id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworkGateways/vgw-hub-vpn-westeurope/ipConfigurations/vnetGatewayConfigactive_active_1",
+                        "default_bgp_ip_addresses": [
+                            "10.0.0.140"
+                        ],
+                        "custom_bgp_ip_addresses": [],
+                        "tunnel_ip_addresses": [
+                            "108.141.3.192"
+                        ]
+                    },
+                    {
+                        "ipconfiguration_id": "/subscriptions/469e5f0e-0935-481b-a0b8-d08f2e81fe18/resourceGroups/rg-hub-westeurope/providers/Microsoft.Network/virtualNetworkGateways/vgw-hub-vpn-westeurope/ipConfigurations/vnetGatewayConfigactive_active_2",
+                        "default_bgp_ip_addresses": [
+                            "10.0.0.141"
+                        ],
+                        "custom_bgp_ip_addresses": [],
+                        "tunnel_ip_addresses": [
+                            "98.64.226.168"
+                        ]
+                    }
+                ]
+            },
+            "resource_guid": "06c2e99e-e0f0-4567-aebf-d43e3331f1d2",
+            "provisioning_state": "Succeeded",
+            "nat_rules": [],
+            "enable_bgp_route_translation_for_nat": false,
+            "allow_virtual_wan_traffic": false,
+            "allow_remote_vnet_traffic": false,
+            "subscription_id": "469e5f0e-0935-481b-a0b8-d08f2e81fe18",
+            "resource_group_name": "rg-hub-westeurope"
+        }
+    ],
+    "express_route_circuits": [],
+    "insights": []
+}
